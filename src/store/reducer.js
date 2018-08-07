@@ -2,8 +2,8 @@ import { combineReducers } from 'redux'
 import { routerReducer as routing } from 'react-router-redux'
 import { reducer as form } from 'redux-form'
 import LoginReducer from '../modules/login/loginState'
-import CarDetailReducer from '../modules/car_detail/CarDetailState'
-import MainPageReducer from '../modules/main_page/MainPageState'
+import CarDetailReducer from '../modules/car_detail/carDetailState'
+import MainPageReducer from '../modules/main_page/mainPageState'
 
 const reducers = {
   routing,

@@ -20,8 +20,8 @@ function* requestLogin({ username, password }: {username: string, password: stri
     const token = yield api.post(`${API_ROOT}/login/`, body
     )
     if (token) {
-      yield setAuthenticationToken(token);
-      console.log(Storage.get(KEYS.accessToken),"access");
+      yield setAuthenticationToken(token,username);
+      console.log(Storage.get(KEYS.accessToken),username,"access");
       yield put(LoginActions.loginSuccess(username));
     }
   } catch (e) {

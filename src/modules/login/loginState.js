@@ -7,6 +7,7 @@ import { getAuthenticationToken, setAuthenticationToken } from '../../utils/auth
 import api from '../../utils/api'
 */
 import { actionsGenerator } from '../../store/reducerUtils'
+import {MainPageTypes} from '../main_page/mainPageState';
 
 type LoginState = {
   loading: boolean,
@@ -24,6 +25,7 @@ const initialState = {
 export const { Types: LoginTypes, Creators: LoginActions } = createActions(
   actionsGenerator({
     loginRequest: ['username', 'password'],
+    setUsername:['username'],
   })
 )
 
@@ -39,7 +41,7 @@ export default function LoginReducer(state: LoginState = initialState, action: O
       return {
         ...state,
         loading: false,
-        username: action.payload.username,
+        username: action.payload,
       }
     case LoginTypes.LOGIN_FAILURE:
       return {
@@ -47,6 +49,12 @@ export default function LoginReducer(state: LoginState = initialState, action: O
         loading: false,
         error: action.error,
       }
+    case LoginTypes.SET_USERNAME:
+      return {
+        ...state,
+        username: action.username,
+        loading: false,
+      };
     default:
       return state
   }

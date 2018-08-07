@@ -6,7 +6,7 @@ import { Card, CardImg, CardText, CardBody,
   CardTitle, CardSubtitle, CardDeck} from 'reactstrap';
 import Navigator from '../top_navigator/navigatorContainer'
 import './cardView.css'
-import CardDetailView from "../car_detail/CarDetailViewContainer";
+import CardDetailView from "../car_detail/carDetailViewContainer";
 import Moment from 'react-moment';
 import Constants from '../../constants/constants'
 import { Circle } from 'rc-progress';
@@ -66,7 +66,6 @@ class MainPageView extends Component<Props, State> {
   };
   onPaginatedSearch(){
     let params = this.getParams(this.props.next);
-    console.log(params,'params');
     let paramsString = qs.stringify(params);
     this.props.getCarAllRequest(paramsString).then(()=>{
       this.setState({nowlist: this.state.nowlist.concat(this.props.cars)},console.log(this.state.nowlist,'nowlist'))
@@ -78,7 +77,9 @@ class MainPageView extends Component<Props, State> {
     const utc2 = Date.UTC(b.getFullYear(), b.getMonth(), b.getDate());
     return Math.floor((utc2 - utc1) / _MS_PER_DAY);
   }
-
+  goToDetail(id){
+    this.props.history.push({pathname: `/cars/${id}`})
+  }
   render() {
     return (
       <div>
@@ -100,7 +101,6 @@ class MainPageView extends Component<Props, State> {
                                 const endToStart = this.dateDiffInDays(started_at, end_at);
                                 const nowToStart = this.dateDiffInDays(started_at, now);
                                 const progress = (nowToStart) / (endToStart);
-                                console.log(index,listValue,'listValue and index');
                                 return (
                                   <Card className="card2" body outline color="#ffe4a8" key={index}>
                                     <CardBody>
@@ -146,14 +146,15 @@ class MainPageView extends Component<Props, State> {
                               const endToStart = this.dateDiffInDays(started_at, end_at);
                               const nowToStart = this.dateDiffInDays(started_at, now);
                               const progress = (nowToStart) / (endToStart);
-                              console.log(index,listValue,'listValue and index1');
                                 return (
                                   <Card className="card2" body outline color="#ffe4a8" key={index2}>
                                     <CardBody>
                                       <CardTitle>{listValue.detail.name}</CardTitle>
                                     </CardBody>
-                                    <img width="100%" src={listValue.detail.main_image.url}
-                                         alt="Card image cap"/>
+                                    <div key={index} onClick={()=>this.goToDetail(listValue.id)}>
+                                      <img width="100%" src={_.get(listValue,['detail','main_image','url'])}
+                                           alt="Card image cap"/>
+                                    </div>
                                     <CardBody>
                                       <Row>
                                         <Col>

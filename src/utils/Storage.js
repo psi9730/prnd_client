@@ -26,16 +26,4 @@ export const removeTokens = () => {
   remove(KEYS.refreshToken)
 }
 
-export const getUserId = () => get(KEYS.userId)
-
-export const saveUserId = id => set(KEYS.userId, id)
-
-export const removeUserId = () => remove(KEYS.userId)
-
-export const getUsername = () => get(KEYS.username)
-
-export const saveUsername = username => set(KEYS.username, username)
-
-export const removeUsername = () => remove(KEYS.username)
-
 export default {get, set,remove}

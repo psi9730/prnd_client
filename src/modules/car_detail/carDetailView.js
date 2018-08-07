@@ -6,7 +6,7 @@ import { Container, Button,
   CarouselIndicators,
   CarouselCaption} from 'reactstrap';
 import Modal from 'react-modal';
-import './CarDetailView.css'
+import './carDetailView.css'
 import autoBind from 'react-autobind'
 import Storage, {KEYS} from "../../utils/Storage";
 import Moment from 'react-moment';

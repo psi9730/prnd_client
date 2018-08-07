@@ -7,8 +7,6 @@ import {
 } from 'reactstrap'
 import autoBind from 'react-autobind'
 import './navigator.css'
-import Select from 'react-select'
-import qs from 'qs'
 import { withRouter } from 'react-router-dom';
 export class Navigator extends React.Component {
   constructor(props) {
@@ -21,6 +19,7 @@ export class Navigator extends React.Component {
   }
 
   componentWillMount() {
+    this.props.setUsername(Storage.get(KEYS.username));
   }
 
   componentWillReceiveProps(nextProps) {
@@ -37,25 +36,25 @@ export class Navigator extends React.Component {
   onLogoutPressed(){
     if(window.confirm("로그아웃 하시겠습니까?")){
       clearAuthenticationToken();
-      this.props.history.push('/login');
+      this.props.history.push({pathname: '/login'});
     }
   }
   render() {
     return (
       <div className="nav1">
-        <Container>
-          <Navbar color="#2E7DE1" light expand="md">
+        <Container style={{backgroundColor: '#2E7DE1'}}>
+          <Navbar color="faded" light expand="md">
             <NavbarBrand href="/homepage/">
               <Row>
                 <Col sm="3">
-                  <img className="imglogo1" width="100" height="30" src={require('../../assets/images/prnd-icon.png')} alt="Card image cap" />
+                  <img className="imglogo1" width="50" height="40" src={require('../../assets/images/prnd-icon.png')} alt="Card image cap" />
                 </Col>
               </Row>
             </NavbarBrand>
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar>
-                <NavItem className="Navi1">
-                  <Button className="btt11" color="white" onClick={()=>this.goToBargain()}>{
+                <NavItem className="Navi1" >
+                  <Button className="btt11" style={{backgroundColor:"#2E7DE1", borderWidth:0}} onClick={()=>this.goToBargain()}>{
                     this.state.selectedOption==='경매' ?
                     <span
                     style={{color: 'white'}}>경매</span> :  <span
@@ -64,7 +63,7 @@ export class Navigator extends React.Component {
                   </Button>
                 </NavItem>
                 <NavItem className="Navi1">
-                  <Button className="btt11" color="white">{
+                  <Button className="btt11" style={{backgroundColor:"#2E7DE1", borderWidth:0}}>{
                     this.state.selectedOption==='내 응찰' ?
                       <span
                         style={{color: 'white'}}>내 응찰</span> :  <span
@@ -73,7 +72,7 @@ export class Navigator extends React.Component {
                   </Button>
                 </NavItem>
                 <NavItem className="Navi1">
-                  <Button className="btt11" color="white">{
+                  <Button className="btt11" style={{backgroundColor:"#2E7DE1", borderWidth:0}}>{
                     this.state.selectedOption==='내 거래' ?
                       <span
                         style={{color: 'white'}}>내 거래</span> :  <span
@@ -82,7 +81,7 @@ export class Navigator extends React.Component {
                   </Button>
                 </NavItem>
                 <NavItem className="Navi1">
-                  <Button className="btt11" color="white">{
+                  <Button className="btt11" style={{backgroundColor:"#2E7DE1", borderWidth:0}}>{
                     this.state.selectedOption==='공지사항' ?
                       <span
                         style={{color: 'white'}}>공지사항</span> :  <span
@@ -91,22 +90,22 @@ export class Navigator extends React.Component {
                   </Button>
                 </NavItem>
                 <NavItem>
-                  <Button>
+                  <Button className="btt11" style={{backgroundColor:"#2E7DE1", borderWidth:0}}>
                     <img width="20" height="20" src={require('../../assets/images/user-image.png')} alt="Card image cap" />
                   </Button>
                 </NavItem>
                 <NavItem>
-                  <Button>
+                  <Button className="btt11" style={{backgroundColor:"#2E7DE1", borderWidth:0}}>
                     <span  style={{color: 'white'}}> {this.props.username} </span>
                   </Button>
                 </NavItem>
                 <NavItem>
-                  <Button className="btt11" color="white">
+                  <Button className="btt11" style={{backgroundColor:"#2E7DE1", borderWidth:0}}>
                     <img width="20" height="20" src={require('../../assets/images/notify.png')} alt="Card image cap" />
                   </Button>
                 </NavItem>
                 <NavItem>
-                  <Button className="btt12" color="white" onClick={this.onLogoutPressed}>
+                  <Button className="btt12" style={{backgroundColor:"#2E7DE1", borderWidth:0}} onClick={this.onLogoutPressed}>
                     <img width="25" height="25" src={require('../../assets/images/logout.png')} alt="Card image cap" />
                   </Button>
                 </NavItem>

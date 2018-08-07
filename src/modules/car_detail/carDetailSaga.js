@@ -1,6 +1,6 @@
 import {call, put, takeLatest} from 'redux-saga/effects'
 import api from '../../utils/api'
-import {CarDetailActions, CarDetailTypes} from './CarDetailState'
+import {CarDetailActions, CarDetailTypes} from './carDetailState'
 import {KEYS} from '../../utils/Storage'
 import Storage from '../../utils/Storage'
 import Constants from '../../constants/constants'
