@@ -1,0 +1,36 @@
+
+.login1{
+}
+
+.card3{
+  display: flex;
+  justify-content: flex-start;
+}
+
+.cont{
+  padding: 70px;
+  background-color: #fef9ff;
+}
+
+.ro1{
+  display: flex;
+  justify-content: center;
+}
+
+.display-3{
+  font-family: Times New Roman;
+}
+
+.bt1{
+  background-color:#ffe4a8;
+  margin-top:10px;
+}
+.bt2{
+  background-color:#aaffd3;
+  color:black;
+  margin-top:10px;
+}
+
+.mr-sm-2{
+  margin:5px;
+}
