@@ -31,15 +31,7 @@ class MainPageView extends Component<Props, State> {
     super(props);
     autoBind(this)
     this.state = {
-      list: [
-        "https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180",
-        "https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180",
-        "https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180",
-        "https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180",
-        "https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180"
-      ],
-      nowList: [   "https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180",  "https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180"],
-      index: 0,
+
     };
   }
  componentDidMount() {
@@ -67,12 +59,8 @@ class MainPageView extends Component<Props, State> {
       })
     }
   }
-  onClickWrite(){
-
-  }
 
   render() {
-    console.log(this.props.cards,"CARD!!!");
     return (
       <div>
         <Navigator/>
