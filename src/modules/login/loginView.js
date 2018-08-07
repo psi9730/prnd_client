@@ -76,8 +76,7 @@ class LoginView extends Component<Props, State> {
         <Row className="ro1">
           <Col className="main1" xs="6" sm="5">
           <Card body outline color="#ffe4a8">
-            <img width="90%" height="90%" src={require('../../assets/images/mainlogo.png')} alt="Card image cap" />
-            <img width="90%" height="90%" src={require('../../assets/images/logindog2.jpg')} alt="Card image cap" />
+            <img width="90%" height="90%" src={require('../../assets/images/prnd.png')} alt="Card image cap" />
             <CardBody className="card3">
               <Form>
                 <FormGroup className="mb-2 mr-sm-2 mb-sm-0">

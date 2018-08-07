@@ -99,6 +99,7 @@
     "prop-types": "^15.6.1",
     "qs": "^6.5.2",
     "query-string": "^4.3.2",
+    "rc-progress": "^2.2.5",
     "react": "^15.6.2",
     "react-addons-css-transition-group": "^15.6.2",
     "react-addons-transition-group": "^15.6.2",

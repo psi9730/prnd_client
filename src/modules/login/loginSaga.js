@@ -17,10 +17,10 @@ function* requestLogin({ username, password }: {username: string, password: stri
   }
 
   try {
-    const token = yield api.post(`${API_ROOT}/login`, body
+    const token = yield api.post(`${API_ROOT}/login/`, body
     )
     if (token) {
-      yield setAuthenticationToken(token,username,password);
+      yield setAuthenticationToken(token);
       console.log(Storage.get(KEYS.accessToken),"access");
       yield put(LoginActions.loginSuccess(username));
     }

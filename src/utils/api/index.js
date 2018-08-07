@@ -24,7 +24,7 @@ export const parseJSON = response => response.json()
    };
    const authToken = Storage.get(KEYS.accessToken)
    if (authToken) {
-     headers.Authorization = `Token ${authToken}`;
+     headers.Authorization = `JWT ${authToken}`;
    }
    if (!otherSettings.isFormData) {
      headers['Content-Type'] = 'application/json';

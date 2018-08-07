@@ -2,35 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cddba2f0-06a3-4906-beb1-456af59b0e68" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/modules/top_navigator/navigator.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/modules/top_navigator/navigator.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/modules/top_navigator/navigatorContainer.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/modules/car_detail/CarDetailSaga.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/modules/car_detail/CarDetailState.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/modules/car_detail/CarDetailView.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/modules/car_detail/CarDetailView.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/modules/car_detail/CarDetailViewContainer.js" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/dog.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/edit.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/example.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/example1.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/facebook.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/instagram-logo.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/instagram.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/logindog.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/logindog2.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/logout.png" afterPath="$PROJECT_DIR$/src/assets/images/logout.png" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/mainlogo.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/multiply.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/user (1).png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/user.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/write.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/write2.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/constants/constants.js" afterPath="$PROJECT_DIR$/src/constants/constants.js" />
-      <change beforePath="$PROJECT_DIR$/src/modules/login/SignUpView.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/modules/login/SignupView.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/modules/login/SignupViewContainer.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
+      <change beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
       <change beforePath="$PROJECT_DIR$/src/modules/login/loginSaga.js" afterPath="$PROJECT_DIR$/src/modules/login/loginSaga.js" />
-      <change beforePath="$PROJECT_DIR$/src/modules/login/loginState.js" afterPath="$PROJECT_DIR$/src/modules/login/loginState.js" />
       <change beforePath="$PROJECT_DIR$/src/modules/login/loginView.js" afterPath="$PROJECT_DIR$/src/modules/login/loginView.js" />
+      <change beforePath="$PROJECT_DIR$/src/modules/main_page/list.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/modules/main_page/mainPageSaga.js" afterPath="$PROJECT_DIR$/src/modules/main_page/mainPageSaga.js" />
+      <change beforePath="$PROJECT_DIR$/src/modules/main_page/mainPageState.js" afterPath="$PROJECT_DIR$/src/modules/main_page/mainPageState.js" />
       <change beforePath="$PROJECT_DIR$/src/modules/main_page/mainPageView.js" afterPath="$PROJECT_DIR$/src/modules/main_page/mainPageView.js" />
+      <change beforePath="$PROJECT_DIR$/src/modules/main_page/mainPageViewContainer.js" afterPath="$PROJECT_DIR$/src/modules/main_page/mainPageViewContainer.js" />
+      <change beforePath="$PROJECT_DIR$/src/modules/top_navigator/navigator.js" afterPath="$PROJECT_DIR$/src/modules/top_navigator/navigator.js" />
       <change beforePath="$PROJECT_DIR$/src/routes.js" afterPath="$PROJECT_DIR$/src/routes.js" />
+      <change beforePath="$PROJECT_DIR$/src/store/actions.js" afterPath="$PROJECT_DIR$/src/store/actions.js" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducer.js" afterPath="$PROJECT_DIR$/src/store/reducer.js" />
+      <change beforePath="$PROJECT_DIR$/src/store/sagas.js" afterPath="$PROJECT_DIR$/src/store/sagas.js" />
+      <change beforePath="$PROJECT_DIR$/src/utils/api/index.js" afterPath="$PROJECT_DIR$/src/utils/api/index.js" />
+      <change beforePath="$PROJECT_DIR$/src/utils/authentication.js" afterPath="$PROJECT_DIR$/src/utils/authentication.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -50,40 +43,30 @@
       <file leaf-file-name="mainPageState.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/modules/main_page/mainPageState.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="23" column="20" lean-forward="false" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
+            <state relative-caret-position="154">
+              <caret line="41" column="44" lean-forward="true" selection-start-line="41" selection-start-column="44" selection-end-line="41" selection-end-column="44" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mainPageView.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/modules/main_page/mainPageView.js">
+      <file leaf-file-name="mainPageSaga.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/modules/main_page/mainPageSaga.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="45" column="20" lean-forward="true" selection-start-line="45" selection-start-column="20" selection-end-line="45" selection-end-column="20" />
+            <state relative-caret-position="584">
+              <caret line="49" column="45" lean-forward="false" selection-start-line="49" selection-start-column="45" selection-end-line="49" selection-end-column="45" />
               <folding>
-                <element signature="e#9#49#0" expanded="true" />
+                <element signature="e#0#58#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mainPageViewContainer.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/modules/main_page/mainPageViewContainer.js">
+      <file leaf-file-name="loginState.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/modules/login/loginState.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="navigator.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/modules/top_navigator/navigator.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="464">
-              <caret line="29" column="7" lean-forward="true" selection-start-line="29" selection-start-column="7" selection-end-line="29" selection-end-column="7" />
+            <state relative-caret-position="574">
+              <caret line="41" column="33" lean-forward="false" selection-start-line="41" selection-start-column="33" selection-end-line="41" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -92,8 +75,8 @@
       <file leaf-file-name="loginView.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/modules/login/loginView.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="329">
-              <caret line="85" column="28" lean-forward="true" selection-start-line="85" selection-start-column="28" selection-end-line="85" selection-end-column="28" />
+            <state relative-caret-position="617">
+              <caret line="82" column="23" lean-forward="false" selection-start-line="82" selection-start-column="22" selection-end-line="82" selection-end-column="23" />
               <folding>
                 <element signature="e#9#49#0" expanded="true" />
               </folding>
@@ -101,40 +84,18 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="navigatorContainer.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/modules/top_navigator/navigatorContainer.js">
+      <file leaf-file-name="loginSaga.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/modules/login/loginSaga.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="64">
-              <caret line="9" column="34" lean-forward="false" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
+            <state relative-caret-position="256">
+              <caret line="22" column="42" lean-forward="true" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="navigator.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/modules/top_navigator/navigator.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="496">
-              <caret line="31" column="6" lean-forward="true" selection-start-line="31" selection-start-column="6" selection-end-line="31" selection-end-column="6" />
-              <folding>
-                <element signature="e#0#40#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mainPageSaga.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/modules/main_page/mainPageSaga.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="14" column="16" lean-forward="false" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="list.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/modules/main_page/list.js">
+      <file leaf-file-name="loginView.test.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/modules/login/loginView.test.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -143,27 +104,42 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/utils/api/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="320">
+              <caret line="26" column="33" lean-forward="false" selection-start-line="26" selection-start-column="33" selection-end-line="26" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mainPageViewContainer.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/modules/main_page/mainPageViewContainer.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="256">
+              <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mainPageView.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/modules/main_page/mainPageView.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="429">
+              <caret line="72" column="5" lean-forward="false" selection-start-line="72" selection-start-column="5" selection-end-line="72" selection-end-column="5" />
+              <folding>
+                <element signature="e#9#49#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>moment</find>
-      <find>imi</find>
-      <find>items</find>
-      <find>comments</find>
-      <find>renderDetail</find>
-      <find>map</find>
-      <find>replace</find>
-      <find>slides</find>
-      <find>captionText</find>
-      <find>userProfileImage</find>
-      <find>tr</find>
-      <find>afterOpen</find>
-      <find>postComment</find>
-      <find>key</find>
-      <find>indicators</find>
-      <find>_.map</find>
-      <find>pets</find>
       <find>src=</find>
       <find>API_SERVER</find>
       <find>date</find>
@@ -176,7 +152,24 @@
       <find>navigator</find>
       <find>getUserFilter</find>
       <find>query</find>
+      <find>cards</find>
+      <find>car</find>
+      <find>card</find>
+      <find>{}</find>
+      <find>api_server</find>
+      <find>there is no user on given</find>
+      <find>mainPage</find>
+      <find>e</find>
+      <find>instagram</find>
+      <find>style</find>
+      <find>span</find>
+      <find>is</find>
+      <find>progress</find>
+      <find>url</find>
+      <find>qs</find>
       <find>list</find>
+      <find>end_at</find>
+      <find>index</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -191,9 +184,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/components/App.js" />
-        <option value="$PROJECT_DIR$/src/modules/main_page/cardView.js" />
-        <option value="$PROJECT_DIR$/src/modules/main_page/list.js" />
         <option value="$PROJECT_DIR$/src/modules/pet_profile/PetProfileView.js" />
         <option value="$PROJECT_DIR$/src/modules/search_page/SearchViewContainer.js" />
         <option value="$PROJECT_DIR$/.happypack/cache--jsx-1b1e1e7e.json" />
@@ -203,44 +193,47 @@
         <option value="$PROJECT_DIR$/src/modules/search_page/SearchSaga.js" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/modules/search_page/SearchView.js" />
-        <option value="$PROJECT_DIR$/src/modules/main_page/mainPageSaga.js" />
         <option value="$PROJECT_DIR$/src/modules/memo/memoSaga.js" />
         <option value="$PROJECT_DIR$/src/modules/memo/memoState.js" />
-        <option value="$PROJECT_DIR$/src/utils/authentication.js" />
         <option value="$PROJECT_DIR$/src/modules/pet_profile/PetProfileSaga.js" />
         <option value="$PROJECT_DIR$/src/modules/memo/memoView.js" />
         <option value="$PROJECT_DIR$/src/modules/user_profile/ImageUpdateModalContainer.js" />
-        <option value="$PROJECT_DIR$/src/utils/api/index.js" />
-        <option value="$PROJECT_DIR$/src/modules/main_page/mainPageState.js" />
-        <option value="$PROJECT_DIR$/src/modules/main_page/mainPageViewContainer.js" />
         <option value="$PROJECT_DIR$/src/modules/login/SignupView.js" />
         <option value="$PROJECT_DIR$/src/modules/user_profile/UserProfileState.js" />
         <option value="$PROJECT_DIR$/src/modules/card_write/CardWriteViewContainer.js" />
         <option value="$PROJECT_DIR$/src/modules/card_write/CardWriteState.js" />
         <option value="$PROJECT_DIR$/src/modules/card_write/CardWriteSaga.js" />
-        <option value="$PROJECT_DIR$/src/modules/card_detail/CardDetailViewContainer.js" />
-        <option value="$PROJECT_DIR$/src/modules/card_detail/CardDetailSaga.js" />
-        <option value="$PROJECT_DIR$/src/modules/card_detail/CardDetailState.js" />
-        <option value="$PROJECT_DIR$/src/modules/card_detail/CardDetailView.js" />
         <option value="$PROJECT_DIR$/src/modules/user_profile/ImageUpdateModal.js" />
         <option value="$PROJECT_DIR$/src/modules/user_profile/UserProfileViewContainer.js" />
         <option value="$PROJECT_DIR$/src/modules/card_write/CardWriteView.js" />
         <option value="$PROJECT_DIR$/src/modules/user_profile/UserProfileSaga.js" />
         <option value="$PROJECT_DIR$/src/modules/user_profile/UserProfileView.js" />
         <option value="$PROJECT_DIR$/src/utils/Storage.js" />
-        <option value="$PROJECT_DIR$/src/store/actions.js" />
-        <option value="$PROJECT_DIR$/src/store/sagas.js" />
-        <option value="$PROJECT_DIR$/src/store/reducer.js" />
-        <option value="$PROJECT_DIR$/src/modules/login/loginView.js" />
         <option value="$PROJECT_DIR$/src/constants/constants.js" />
         <option value="$PROJECT_DIR$/src/modules/top_navigator/navigator.css" />
         <option value="$PROJECT_DIR$/src/modules/top_navigator/navigatorSaga.js" />
-        <option value="$PROJECT_DIR$/src/routes.js" />
         <option value="$PROJECT_DIR$/src/modules/login/loginState.js" />
-        <option value="$PROJECT_DIR$/src/modules/login/loginSaga.js" />
         <option value="$PROJECT_DIR$/src/modules/top_navigator/navigatorContainer.js" />
-        <option value="$PROJECT_DIR$/src/modules/top_navigator/navigator.js" />
         <option value="$PROJECT_DIR$/src/modules/top_navigator/navigatorState.js" />
+        <option value="$PROJECT_DIR$/src/modules/card_detail/CardDetailView.css" />
+        <option value="$PROJECT_DIR$/src/modules/card_detail/CardDetailView.js" />
+        <option value="$PROJECT_DIR$/src/modules/card_detail/CardDetailViewContainer.js" />
+        <option value="$PROJECT_DIR$/src/utils/authentication.js" />
+        <option value="$PROJECT_DIR$/src/modules/card_detail/CardDetailSaga.js" />
+        <option value="$PROJECT_DIR$/src/modules/card_detail/CardDetailState.js" />
+        <option value="$PROJECT_DIR$/src/store/actions.js" />
+        <option value="$PROJECT_DIR$/src/store/sagas.js" />
+        <option value="$PROJECT_DIR$/src/modules/car_detail/CarDetailViewContainer.js" />
+        <option value="$PROJECT_DIR$/src/store/reducer.js" />
+        <option value="$PROJECT_DIR$/src/modules/main_page/mainPageViewContainer.js" />
+        <option value="$PROJECT_DIR$/src/modules/car_detail/CarDetailView.js" />
+        <option value="$PROJECT_DIR$/src/modules/login/loginSaga.js" />
+        <option value="$PROJECT_DIR$/src/routes.js" />
+        <option value="$PROJECT_DIR$/src/modules/login/loginView.js" />
+        <option value="$PROJECT_DIR$/src/modules/top_navigator/navigator.js" />
+        <option value="$PROJECT_DIR$/src/utils/api/index.js" />
+        <option value="$PROJECT_DIR$/src/modules/main_page/mainPageSaga.js" />
+        <option value="$PROJECT_DIR$/src/modules/main_page/mainPageState.js" />
         <option value="$PROJECT_DIR$/src/modules/main_page/mainPageView.js" />
       </list>
     </option>
@@ -266,7 +259,7 @@
     <option name="x" value="-65" />
     <option name="y" value="-984" />
     <option name="width" value="1602" />
-    <option name="height" value="723" />
+    <option name="height" value="959" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -300,18 +293,6 @@
               <item name="pet-stagram" type="b2602c69:ProjectViewProjectNode" />
               <item name="pet-stagram" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pet-stagram" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pet-stagram" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="constants" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pet-stagram" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pet-stagram" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="modules" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -327,13 +308,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="modules" type="462c0819:PsiDirectoryNode" />
               <item name="main_page" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pet-stagram" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pet-stagram" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="modules" type="462c0819:PsiDirectoryNode" />
-              <item name="top_navigator" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="pet-stagram" type="b2602c69:ProjectViewProjectNode" />
@@ -429,15 +403,15 @@
       <workItem from="1529042408482" duration="7935000" />
       <workItem from="1529149996419" duration="27265000" />
       <workItem from="1529337904595" duration="35374000" />
-      <workItem from="1533605142815" duration="7006000" />
+      <workItem from="1533605142815" duration="21757000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="316319000" />
+    <option name="totallyTimeSpent" value="331070000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-65" y="-984" width="1602" height="723" extended-state="0" />
+    <frame x="-65" y="-984" width="1602" height="959" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21098627" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -468,42 +442,15 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="10" />
+      <option name="time" value="11" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/modules/card_detail/CardDetailView.css" />
-    <entry file="file://$PROJECT_DIR$/src/modules/card_detail/CardDetailSaga.js" />
-    <entry file="file://$PROJECT_DIR$/src/modules/card_detail/CardDetailState.js" />
-    <entry file="file://$PROJECT_DIR$/src/modules/card_write/CardWriteSaga.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="50" column="16" lean-forward="false" selection-start-line="50" selection-start-column="16" selection-end-line="50" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/user_profile/UserProfileViewContainer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="16" column="40" lean-forward="false" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/modules/user_profile/UserProfileState.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="106" column="7" lean-forward="false" selection-start-line="106" selection-start-column="7" selection-end-line="106" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/card_detail/CardDetailView.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1136">
-          <caret line="307" column="0" lean-forward="false" selection-start-line="307" selection-start-column="0" selection-end-line="307" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -576,22 +523,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/store/actions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="69" lean-forward="false" selection-start-line="0" selection-start-column="69" selection-end-line="0" selection-end-column="69" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/store/reducerUtils.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/store/selectors.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -604,14 +535,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-24">
           <caret line="3" column="19" lean-forward="false" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/authentication.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="13" column="3" lean-forward="true" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
           <folding />
         </state>
       </provider>
@@ -656,16 +579,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/login/loginView.test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#26#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/modules/login/loginViewContainer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -689,26 +602,6 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/store/sagas.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#40#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/routes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="12" column="4" lean-forward="false" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
-          <folding>
-            <element signature="e#0#25#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -738,72 +631,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/login/loginSaga.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="24" column="50" lean-forward="false" selection-start-line="24" selection-start-column="50" selection-end-line="24" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/login/loginView.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="20" column="31" lean-forward="false" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/login/loginState.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="41" column="33" lean-forward="false" selection-start-line="41" selection-start-column="33" selection-end-line="41" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/store/reducer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/api/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="48" column="26" lean-forward="true" selection-start-line="48" selection-start-column="26" selection-end-line="48" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/main_page/cardView.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/main_page/list.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/main_page/mainPageSaga.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="14" column="16" lean-forward="false" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/modules/top_navigator/navigatorState.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="92">
@@ -820,29 +647,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/main_page/mainPageViewContainer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/modules/top_navigator/navigatorContainer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="64">
           <caret line="9" column="34" lean-forward="false" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/top_navigator/navigator.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="496">
-          <caret line="31" column="6" lean-forward="true" selection-start-line="31" selection-start-column="6" selection-end-line="31" selection-end-column="6" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -854,28 +663,212 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/main_page/cardView.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/CardDetailSaga.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/authentication.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="17" column="40" lean-forward="true" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/store/actions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="12" column="2" lean-forward="true" selection-start-line="12" selection-start-column="2" selection-end-line="12" selection-end-column="2" />
+          <folding>
+            <element signature="e#0#69#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/car_detail/CarDetailSaga.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#56#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/car_detail/CarDetailViewContainer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="16" column="31" lean-forward="false" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/car_detail/CarDetailView.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="464">
+          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/car_detail/CarDetailState.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="47" column="12" lean-forward="false" selection-start-line="47" selection-start-column="12" selection-end-line="47" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/car_detail/CarDetailView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1379">
+          <caret line="142" column="9" lean-forward="false" selection-start-line="142" selection-start-column="9" selection-end-line="142" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="16">
+          <caret line="1" column="84" lean-forward="false" selection-start-line="1" selection-start-column="84" selection-end-line="1" selection-end-column="84" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/top_navigator/navigator.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="389">
+          <caret line="99" column="51" lean-forward="false" selection-start-line="99" selection-start-column="51" selection-end-line="99" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/store/sagas.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="7" column="20" lean-forward="true" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/store/reducerUtils.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/store/reducer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="10" column="25" lean-forward="true" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/login/loginView.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="20" column="31" lean-forward="false" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/login/loginView.test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/login/loginState.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="574">
+          <caret line="41" column="33" lean-forward="false" selection-start-line="41" selection-start-column="33" selection-end-line="41" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/login/loginSaga.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="22" column="42" lean-forward="true" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/modules/login/loginView.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="85" column="28" lean-forward="true" selection-start-line="85" selection-start-column="28" selection-end-line="85" selection-end-column="28" />
+        <state relative-caret-position="617">
+          <caret line="82" column="23" lean-forward="false" selection-start-line="82" selection-start-column="22" selection-end-line="82" selection-end-column="23" />
           <folding>
             <element signature="e#9#49#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/api/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="26" column="33" lean-forward="false" selection-start-line="26" selection-start-column="33" selection-end-line="26" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/main_page/mainPageViewContainer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/main_page/list.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/main_page/mainPageSaga.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="584">
+          <caret line="49" column="45" lean-forward="false" selection-start-line="49" selection-start-column="45" selection-end-line="49" selection-end-column="45" />
+          <folding>
+            <element signature="e#0#58#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/modules/main_page/mainPageState.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="23" column="20" lean-forward="false" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
+        <state relative-caret-position="154">
+          <caret line="41" column="44" lean-forward="true" selection-start-line="41" selection-start-column="44" selection-end-line="41" selection-end-column="44" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/modules/main_page/mainPageView.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="45" column="20" lean-forward="true" selection-start-line="45" selection-start-column="20" selection-end-line="45" selection-end-column="20" />
+        <state relative-caret-position="429">
+          <caret line="72" column="5" lean-forward="false" selection-start-line="72" selection-start-column="5" selection-end-line="72" selection-end-column="5" />
           <folding>
             <element signature="e#9#49#0" expanded="true" />
           </folding>

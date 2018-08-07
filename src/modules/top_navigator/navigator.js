@@ -48,8 +48,7 @@ export class Navigator extends React.Component {
             <NavbarBrand href="/homepage/">
               <Row>
                 <Col sm="3">
-                  <img width="20" height="20" src={require('../../assets/images/instagram.png')} alt="Card image cap" />
-                  <img className="imglogo1" width="100" height="30" src={require('../../assets/images/mainlogo.png')} alt="Card image cap" />
+                  <img className="imglogo1" width="100" height="30" src={require('../../assets/images/prnd-icon.png')} alt="Card image cap" />
                 </Col>
               </Row>
             </NavbarBrand>
@@ -59,35 +58,35 @@ export class Navigator extends React.Component {
                   <Button className="btt11" color="white" onClick={()=>this.goToBargain()}>{
                     this.state.selectedOption==='경매' ?
                     <span
-                    style="color:white">경매</span> :  <span
-                        style="color:gray">경매</span>
+                    style={{color: 'white'}}>경매</span> :  <span
+                        style={{color: 'gray'}}>경매</span>
                   }
                   </Button>
                 </NavItem>
                 <NavItem className="Navi1">
-                  <Button className="btt11" color="white" onClick={}>{
+                  <Button className="btt11" color="white">{
                     this.state.selectedOption==='내 응찰' ?
                       <span
-                        style="color:white">내 응찰</span> :  <span
-                        style="color:gray">내 응찰</span>
+                        style={{color: 'white'}}>내 응찰</span> :  <span
+                        style={{color: 'gray'}}>내 응찰</span>
                   }
                   </Button>
                 </NavItem>
                 <NavItem className="Navi1">
-                  <Button className="btt11" color="white" onClick={}>{
+                  <Button className="btt11" color="white">{
                     this.state.selectedOption==='내 거래' ?
                       <span
-                        style="color:white">내 거래</span> :  <span
-                        style="color:gray">내 거래</span>
+                        style={{color: 'white'}}>내 거래</span> :  <span
+                        style={{color: 'gray'}}>내 거래</span>
                   }
                   </Button>
                 </NavItem>
                 <NavItem className="Navi1">
-                  <Button className="btt11" color="white" onClick={}>{
+                  <Button className="btt11" color="white">{
                     this.state.selectedOption==='공지사항' ?
                       <span
-                        style="color:white">공지사항</span> :  <span
-                        style="color:gray">공지사항</span>
+                        style={{color: 'white'}}>공지사항</span> :  <span
+                        style={{color: 'gray'}}>공지사항</span>
                   }
                   </Button>
                 </NavItem>
@@ -98,7 +97,7 @@ export class Navigator extends React.Component {
                 </NavItem>
                 <NavItem>
                   <Button>
-                    <span  style="color:white"> {this.props.username} </span>
+                    <span  style={{color: 'white'}}> {this.props.username} </span>
                   </Button>
                 </NavItem>
                 <NavItem>
