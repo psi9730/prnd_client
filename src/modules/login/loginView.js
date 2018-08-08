@@ -76,9 +76,9 @@ class LoginView extends Component<Props, State> {
         <Row className="ro1">
           <Col className="main1" xs="6" sm="5">
           <Card body outline color="#ffe4a8">
-            <img width="90%" height="90%" src={require('../../assets/images/prnd.png')} alt="Card image cap" />
+            <img width="100%" height="100%" src={require('../../assets/images/prnd.png')} alt="Card image cap" />
             <CardBody className="card3">
-              <Form>
+              <Form style={{display: 'flex', justifyContent:'center',alignItems: 'center'}}>
                 <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
                   <Label for="exampleEmail" className="mr-sm-2">Login</Label>
                   <Input className="login1" placeholder="USERNAME" onChange={this.onChangeUsername}/>
@@ -87,9 +87,13 @@ class LoginView extends Component<Props, State> {
                   <Label for="examplePassword" className="mr-sm-2">Password</Label>
                   <Input className="login1" type="password" placeholder="PASSWORD" onChange={this.onChangePassword}/>
                 </FormGroup>
-                <Row>
-                <Button className="bt1" color ="#ffe4a8" onClick={() => this.onLoginPressed()}>SIGNIN</Button>
-                <Button href="/signUp" className="bt2" color ="#aaffd3">SIGNUP</Button>
+                <Row className="ro1">
+                <Button className="bt1" color ="#2E7DE1" onClick={() => this.onLoginPressed()}><span
+                  style={{ color: 'white' }}
+                >SIGNIN</span></Button>
+                <Button href="/signUp" className="bt2" color ="#2E7DE1"><span
+                  style={{ color: 'white' }}
+                >SIGNUP</span></Button>
                 </Row>
                 <Row>
                   {this.state.error ? <span style={{color: 'red'}}>this is error message: {this.state.error} </span> : null}

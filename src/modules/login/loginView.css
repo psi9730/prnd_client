@@ -8,13 +8,13 @@
 }
 
 .cont{
-  padding: 70px;
-  background-color: #fef9ff;
+  background-color: white;
 }
 
 .ro1{
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .display-3{
@@ -22,13 +22,15 @@
 }
 
 .bt1{
-  background-color:#ffe4a8;
+  background-color:#2E7DE1;
   margin-top:10px;
+  width: 100px;
 }
 .bt2{
-  background-color:#aaffd3;
+  background-color:#2E7DE1;
   color:black;
   margin-top:10px;
+  width: 100px;
 }
 
 .mr-sm-2{

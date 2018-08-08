@@ -25,7 +25,7 @@
     }
   },
   "rules": {
-    "semi": [2, "never"],
+    "semi": 2,
     "comma-dangle": [2, "always-multiline"],
     "max-len": 0,
     "no-shadow": 0,
@@ -40,7 +40,8 @@
     "import/no-extraneous-dependencies": 0,
     "import/prefer-default-export": 0,
     "react/require-default-props": 0,
-    "react/forbid-prop-types": 0,
+    "react/prop-types": 0,
+    "react/forbid-prop-types": [1, { "forbid": ["any", "array"] }],
     "react/no-unused-prop-types": 0,
     "react/jsx-filename-extension": [2, {"extensions": [".js", ".jsx"]}],
     "no-unused-vars-rest/no-unused-vars": [2, {"ignoreDestructuredVarsWithRest": true}]

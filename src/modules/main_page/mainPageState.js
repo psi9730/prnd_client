@@ -15,7 +15,20 @@ type MainPageState = {
 // Initial state
 const initialState = {
   loading: false,
+  brands: [],
+  groups: [],
+  models: [],
+  brandValue: "",
+  groupValue: "",
+  modelValue: "",
+  brandIndex:-1,
+  groupIndex:-1,
+  modelIndex:-1,
+  isBrandChecked: false,
+  isGroupChecked: false,
+  isModelChecked: false,
   cars:[],
+  order: "recent",
   next:"",
 }
 
@@ -24,9 +37,13 @@ const initialState = {
 export const { Types: MainPageTypes, Creators: MainPageActions } = createActions(
   actionsGenerator({
     getBrandsRequest:[],
-    getModelGroupsRequest:['brand_id'],
-    getModelsRequest:['model_group_id'],
+    getModelGroupsRequest:['brandId'],
+    getModelsRequest:['modelGroupId'],
     getCarAllRequest:['query'],
+    setOrderRequest:['order'],
+    setBrandRequest:['brandValue','brandIndex','isBrandChecked'],
+    setGroupRequest:['groupValue','groupIndex','isGroupChecked'],
+    setModelRequest:['modelValue','modelIndex','isModelChecked'],
   })
 )
 
@@ -55,7 +72,7 @@ export default function MainPageReducer(state: MainPageState = initialState, act
       console.log(action.payload,"payload");
       return {
         ...state,
-        cars: action.payload.results,
+        brands: action.payload,
         loading: false,
       };
     case MainPageTypes.GET_MODELS_REQUEST:
@@ -67,7 +84,7 @@ export default function MainPageReducer(state: MainPageState = initialState, act
       console.log(action.payload,"payload");
       return {
         ...state,
-        cars: action.payload.results,
+        models: action.payload,
         loading: false,
       };
     case MainPageTypes.GET_MODEL_GROUPS_REQUEST:
@@ -79,9 +96,63 @@ export default function MainPageReducer(state: MainPageState = initialState, act
       console.log(action.payload,"payload");
       return {
         ...state,
-        cars: action.payload.results,
+        groups: action.payload,
         loading: false,
       };
+    case MainPageTypes.SET_MODEL_REQUEST:
+      return {
+        ...state,
+        loading: true,
+      };
+    case MainPageTypes.SET_MODEL_SUCCESS:
+      return {
+        ...state,
+        modelValue: action.payload.modelValue,
+        modelIndex: action.payload.modelIndex,
+        isModelChecked: action.payload.isModelChecked,
+        loading: false,
+      }
+    case MainPageTypes.SET_GROUP_REQUEST:
+      return {
+        ...state,
+        loading: true,
+      };
+    case MainPageTypes.SET_GROUP_SUCCESS:
+      return {
+        ...state,
+        groupValue: action.payload.groupValue,
+        groupIndex: action.payload.groupIndex,
+        isGroupChecked: action.payload.isGroupChecked,
+        loading: false,
+      };
+    case MainPageTypes.SET_BRAND_REQUEST:
+      return {
+        ...state,
+        loading: true,
+      };
+    case MainPageTypes.SET_BRAND_SUCCESS:
+      return {
+        ...state,
+        brandValue: action.payload.brandValue,
+        brandIndex: action.payload.brandIndex,
+        isBrandChecked: action.payload.isBrandChecked,
+        loading: false,
+      };
+    case MainPageTypes.SET_ORDER_REQUEST:
+      return {
+        ...state,
+        loading: true,
+      };
+    case MainPageTypes.SET_ORDER_SUCCESS:
+      return {
+        ...state,
+        order: action.payload.order,
+        loading: false,
+      };
+    case MainPageTypes.SET_ORDER_FAILURE:
+    case MainPageTypes.SET_BRAND_FAILURE:
+    case MainPageTypes.SET_GROUP_FAILURE:
+    case MainPageTypes.SET_MODEL_FAILURE:
     case MainPageTypes.GET_MODELS_FAILURE:
     case MainPageTypes.GET_MODEL_GROUPS_FAILURE:
     case MainPageTypes.GET_CAR_ALL_FAILURE:

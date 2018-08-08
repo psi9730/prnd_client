@@ -1,6 +1,6 @@
 import { createStore, applyMiddleware, compose } from 'redux'
 import { createLogger } from 'redux-logger'
-import thunkMiddleware from 'redux-thunk';
+import thunkMiddleware from 'redux-thunk'
 import createReduxWaitForMiddleware from 'redux-wait-for-action'
 import createSagaMiddleware from 'redux-saga'
 import reducer from './reducer'
@@ -10,7 +10,7 @@ const configureStore = initialState => {
   const hasWindow = typeof window !== 'undefined'
   const sagaMiddleware = createSagaMiddleware()
   const logger = createLogger()
-  const waitForMiddleware = createReduxWaitForMiddleware();
+  const waitForMiddleware = createReduxWaitForMiddleware()
   const finalCreateStore = compose(
     applyMiddleware(logger, thunkMiddleware, sagaMiddleware, waitForMiddleware),
     hasWindow && window.devToolsExtension ? window.devToolsExtension() : (f) => f
