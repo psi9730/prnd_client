@@ -3,8 +3,9 @@ import _ from 'lodash'
 import { compose, withHandlers } from 'recompose'
 import actions from '../../store/actions';
 import MainPageView from './mainPageView'
+import { withRouter } from 'react-router-dom';
 
-export default connect(
+export default withRouter(connect(
   state => ({
     cars: _.get(state, ['main', 'cars']),
     next: _.get(state,['main','next']),
@@ -20,6 +21,7 @@ export default connect(
     isBrandChecked: _.get(state,['main','isBrandChecked']),
     isGroupChecked: _.get(state,['main','isGroupChecked']),
     isModelChecked: _.get(state,['main','isModelChecked']),
+    count: _.get(state,['main','count']),
   }),
   actions,
 )(
@@ -29,4 +31,5 @@ export default connect(
   )(
     MainPageView
   )
+)
 )

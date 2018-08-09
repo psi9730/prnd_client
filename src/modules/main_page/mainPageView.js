@@ -4,14 +4,11 @@ import { Input, Alert, Button, Container, Row, Col } from 'reactstrap'
 import autoBind from 'react-autobind'
 import { Card, CardImg, CardText, CardBody,
   CardTitle, CardSubtitle, CardDeck} from 'reactstrap';
-import Navigator from '../top_navigator/navigatorContainer'
-import './cardView.css'
-import CardDetailView from "../car_detail/carDetailViewContainer";
-import Moment from 'react-moment';
-import Constants from '../../constants/constants'
-import { Circle } from 'rc-progress';
-const {API_ROOT,API_SERVER} = Constants;
 import qs from 'qs';
+import { Circle } from 'rc-progress';
+import './cardView.css'
+import Moment from 'react-moment';
+import Navigator from '../top_navigator/navigatorContainer'
 
 type State = {
   username: string,
@@ -63,25 +60,26 @@ class MainPageView extends Component<Props, State> {
         let index;
         console.log(_.get(search,['brand']),'here');
         _.get(search,['brand']) && (index = _.findIndex(this.props.brands,function(brand){
-          if(brand.id===_.get(search,['brand']))
+          console.log(brand);
+          if(brand.id.toString()===_.get(search,['brand']).toString())
             return true;
         }));
         console.log(index);
-        index!==-1 && _.get(search,['brand']) && this.props.setBrandRequest(_.nth(this.props.brands,index).id, index).then(()=>{
-              this.props.getModelGroupsRequest( _.get(search,['model_group'])).then(()=>{
+        index!==-1 && _.get(search,['brand']) && this.props.setBrandRequest(_.nth(this.props.brands,index).id, index,true).then(()=>{
+              this.props.getModelGroupsRequest( _.get(search,['brand'])).then(()=>{
                 let groupIndex;
                 _.get(search,['model_group']) && (groupIndex = _.findIndex(this.props.groups,function(group){
-                  if(group.id===_.get(search,['group']))
+                  if(group.id.toString()===_.get(search,['model_group']).toString())
                     return true;
                 }));
-                _.get(search,['model_group']) && this.props.setGroupRequest(_.nth(this.props.groups,groupIndex).id, groupIndex).then(()=>{
-                  this.props.getModelsRequest(_.get(search,['model'])).then(()=>{
+                _.get(search,['model_group']) && this.props.setGroupRequest(_.nth(this.props.groups,groupIndex).id, groupIndex,true).then(()=>{
+                  this.props.getModelsRequest(_.get(search,['model_group'])).then(()=>{
                     let modelIndex;
                     _.get(search,['model']) && (modelIndex = _.findIndex(this.props.models,function(model){
-                      if(model.id===_.get(search,['model']))
+                      if(model.id.toString()===_.get(search,['model']).toString())
                         return true;
                     }));
-                    _.get(search,['model']) && this.props.setModelRequest(_.nth(this.props.models, modelIndex).id, modelIndex).catch((e)=>console.log(e))
+                    _.get(search,['model']) && this.props.setModelRequest(_.nth(this.props.models, modelIndex).id, modelIndex,true).catch((e)=>console.log(e))
                   }).catch((e)=>console.log(e))
                 }).catch((e)=>console.log(e))
               }).catch((e)=>console.log(e))
@@ -124,7 +122,7 @@ class MainPageView extends Component<Props, State> {
     let params = this.getParams(this.props.next);
     let paramsString = qs.stringify(params);
     console.log(params,'params');
-    paramsString && this.props.getCarAllRequest(paramsString).then(()=>{
+    paramsString && this.props.getCarAllRequest("?"+paramsString).then(()=>{
       this.setState({nowlist: this.state.nowlist.concat(this.props.cars)},console.log(this.state.nowlist,'nowlist'))
     }).catch((e)=>console.log(e));
   }
@@ -167,7 +165,7 @@ class MainPageView extends Component<Props, State> {
     }
     else{
       this.props.getModelsRequest(value).then(()=> {
-        this.props.setGroupRequest(value, index, true).then(()=>this.getCarsRequest()).catch((e)=>console.log(e))
+        this.props.setGroupRequest(value, index, true).then(()=>this.props.setModelRequest(null,-1,false)).then(()=>this.getCarsRequest()).catch((e)=>console.log(e))
       }).catch((e)=>console.log(e))
     }
   }
@@ -182,24 +180,33 @@ class MainPageView extends Component<Props, State> {
         this.props.setModelRequest(value, index, true).then(()=>this.getCarsRequest()).catch((e)=>console.log(e))
     }
   }
+  goToTop(){
+    this.getCarsRequest();
+    window.scrollTo(0, 0)
+  }
   handleBrandChange(event){
     const target = event.target;
     const value = target.value;
     const index = target.name;
     if(this.props.isBrandChecked && this.props.brandValue===value){
-      this.props.setBrandRequest(null,-1,false).then(()=>this.props.setGroupRequest(null,-1,false)).then(()=>this.getCarsRequest()).catch((e)=>console.log(e))
+      this.props.setBrandRequest(null,-1,false).then(()=>this.props.setGroupRequest(null,-1,false)).then(()=>this.props.setModelRequest(null,-1,false)).then(()=>this.getCarsRequest()).catch((e)=>console.log(e))
     }
     else{
       this.props.getModelGroupsRequest(value).then(()=> {
-        this.props.setBrandRequest(value, index, true).then(()=>this.getCarsRequest()).catch((e)=>console.log(e))
+        this.props.setBrandRequest(value, index, true).then(()=>this.props.setGroupRequest(null,-1,false)).then(()=>this.props.setModelRequest(null,-1,false)).then(()=>this.getCarsRequest()).catch((e)=>console.log(e))
       }).catch((e)=>console.log(e))
     }
+  }
+  goToDetail(id){
+    this.props.history.push({   pathname: `/cars/${id}`});
   }
   render() {
     return (
       <div>
         <Navigator/>
         <div className="cnt2">
+          <img className="scroll" onClick={()=>this.goToTop()} src={require('../../assets/images/go_up.png')} alt="Card image cap"/>
+          <Container>
           <div className="navLeft">
             <Button className="btt1" style={{backgroundColor: 'white', borderWidth:0}} onClick={() => this.goToBargain()}>
                 {
@@ -239,6 +246,7 @@ class MainPageView extends Component<Props, State> {
             }
             </Button>
           </div>
+          </Container>
       <Container className="cnt1">
         <Row>
           <Col className="cnt3" xs="auto">
@@ -257,17 +265,17 @@ class MainPageView extends Component<Props, State> {
                           name={brandIndex}
                           value={brand.id}
                           type="checkbox"
-                          checked={this.props.brandIndex===brandIndex.toString()}
+                          checked={this.props.brandIndex.toString()===brandIndex.toString()}
                           onChange={this.handleBrandChange}
                         />
                         </div>
                           <div className='center'><span className='text1'>{' '} {brand.name}</span> <span className='text2'>{brand.auctions_count}</span></div>
                       </div>
                       {
-                        this.props.isBrandChecked && this.props.brandIndex===brandIndex.toString() && <div className='grayLine'/>
+                        this.props.isBrandChecked && this.props.brandIndex.toString()===brandIndex.toString() && <div className='grayLine'/>
                       }
                       {
-                        this.props.isBrandChecked && this.props.brandIndex===brandIndex.toString() && _.map(this.props.groups,((group,groupIndex)=>{
+                        this.props.isBrandChecked && this.props.brandIndex.toString()===brandIndex.toString() && _.map(this.props.groups,((group,groupIndex)=>{
                           return(
                             <div key={groupIndex}>
                               <div className='group'>
@@ -276,15 +284,15 @@ class MainPageView extends Component<Props, State> {
                                   name={groupIndex}
                                   value={group.id}
                                   type="checkbox"
-                                  checked={this.props.groupIndex===groupIndex.toString()}
+                                  checked={this.props.groupIndex.toString()===groupIndex.toString()}
                                   onChange={this.handleGroupChange} /></div>
                                 <div className='center'><span className='text1'>{' '} {group.name}</span> <span className='text2'>{group.auctions_count}</span></div>
                               </div>
                               {
-                                this.props.isGroupChecked && this.props.groupIndex===groupIndex.toString() && <div className='grayLine'/>
+                                this.props.isGroupChecked && this.props.groupIndex.toString()===groupIndex.toString() && <div className='grayLine'/>
                               }
                               {
-                                this.props.isGroupChecked && this.props.groupIndex===groupIndex.toString() && _.map(this.props.models,((model,modelIndex)=>{
+                                this.props.isGroupChecked && this.props.groupIndex.toString()===groupIndex.toString() && _.map(this.props.models,((model,modelIndex)=>{
                                   return(
                                     <div key={modelIndex}>
                                       <div  className='model'>
@@ -293,7 +301,7 @@ class MainPageView extends Component<Props, State> {
                                           name={modelIndex}
                                           value={model.id}
                                           type="checkbox"
-                                          checked={this.props.modelIndex===modelIndex.toString()}
+                                          checked={this.props.modelIndex.toString()===modelIndex.toString()}
                                           onChange={this.handleModelChange} />
                                         </div>
                                         <div className='center'><span className='text1'>{' '} {model.name}</span> <span className='text2'>{model.auctions_count}</span></div>
@@ -312,122 +320,66 @@ class MainPageView extends Component<Props, State> {
               }
             </form>
           </Col>
-          <Col style={{backgroundColor: 'green'}}>
-        {_.map(this.state.nowlist, ((listValue, index) => {
-              if (index % 4 === 0) {
-                return (
-                    <Col md="3" sm="2" style={{display: "flex", justifyContent: "center"}}>
-                      <CardDeck className="card1">
-                        {
-                          index + 4 > this.state.nowlist.length ?
-                            _.map(this.state.nowlist.slice(index, this.state.nowlist.length), ((listValue, index) => {
-                                const end_at = new Date(listValue.auction.end_at);
-                                const started_at = new Date(listValue.auction.started_at);
-                                const now = new Date();
-                              console.log(end_at)
-                              console.log(started_at)
-                              console.log(now)
-                                const endToStart = this.dateDiffInDays(started_at, end_at);
-                                const nowToStart = this.dateDiffInDays(started_at, now);
-                              console.log(nowToStart)
-                                console.log(endToStart)
-                                const progress = (nowToStart) / (endToStart) * 100;
-                                return (
-                                  <Card className="card2" body outline color="#ffe4a8" key={index}>
-                                    <img width="100%" src={listValue.detail.main_image.url}
-                                         alt="Card image cap"/>
-                                    <CardBody>
-                                      <CardTitle>{listValue.detail.name}</CardTitle>
-                                    </CardBody>
-                                    <CardBody>
-                                      <Row>
-                                        <Col>
-                                          <Row>
-                                            <Col>
-                                              <Moment format="YYYY/MM">
-                                                {listValue.detail.initial_registration_date}
-                                              </Moment>
-                                              <CardText>({listValue.detail.year}년형)</CardText>
-                                            </Col>
-                                          </Row>
-                                          <Row>
-                                            <Col>
-                                              <CardText>{listValue.detail.mileage / 10000}만 km</CardText>
-                                            </Col>
-                                          </Row>
-                                          <Row>
-                                            <Col>
-                                              <CardText>{listValue.detail.location}</CardText>
-                                            </Col>
-                                          </Row>
-                                        </Col>
-                                        <Col className='center2'>
-                                              <Circle percent={progress} sytle={{height:30, width:30}} strokeWidth="4" strokeColor="#2E7DE1"/>
-                                          <div className='abs'>
-                                            {listValue.auction.bids_count}
-                                          </div>
-                                        </Col>
-                                      </Row>
-                                    </CardBody>
-                                  </Card>)
-                              })
-                            )
-                            :
-                            _.map(this.state.nowlist.slice(index, index + 4), ((listValue, index2) => {
-                              const end_at = new Date(listValue.auction.end_at);
-                              const started_at = new Date(listValue.auction.started_at);
-                              const now = new Date();
-                              const endToStart = this.dateDiffInDays(started_at, end_at);
-                              const nowToStart = this.dateDiffInDays(started_at, now);
-                              const progress = (nowToStart) / (endToStart);
-                                return (
-                                  <Card className="card2" body outline color="#ffe4a8" key={index2}>
-                                    <CardBody>
-                                      <CardTitle>{listValue.detail.name}</CardTitle>
-                                    </CardBody>
-                                    <div key={index} onClick={()=>this.goToDetail(listValue.id)}>
-                                      <img width="100%" src={_.get(listValue,['detail','main_image','url'])}
-                                           alt="Card image cap"/>
-                                    </div>
-                                    <CardBody>
-                                      <Row>
-                                        <Col>
-                                          <Row>
-                                            <Col>
-                                              <Moment format="YYYY/MM">
-                                                {listValue.detail.initial_registration_date}
-                                              </Moment>
-                                              <CardText>{listValue.detail.year}</CardText>
-                                            </Col>
-                                          </Row>
-                                          <Row>
-                                            <Col>
-                                              <CardText>{listValue.detail.mileage / 10000}만 km</CardText>
-                                            </Col>
-                                          </Row>
-                                          <Row>
-                                            <Col>
-                                              <CardText>{listValue.detail.location}</CardText>
-                                            </Col>
-                                          </Row>
-                                        </Col>
-                                        <Col>
-                                          <Circle percent={progress} strokeWidth="4" strokeColor="#2E7DE1"/>
-                                        </Col>
-                                      </Row>
-                                    </CardBody>
-                                  </Card>)
-                              })
-                            )
-                        }
-                      </CardDeck>
-                    </Col>
+          <Col className="cnt4">
+            <Row>
+              <div className="cnt5" style={{padding:30}}>
+                <div className="cnt8">
+                  <div>차량 {this.props.count}대</div>
+                  <div>
+                    <img className="img2"onClick={()=>this.getCarsRequest()} src={require('../../assets/images/refresh.png')} alt="Card image cap"/>
+                  </div>
+                </div>
+                <div className="cnt7">
+                  <div>
+
+                  </div>
+                </div>
+              </div>
+            </Row>
+            <Row>
+              {_.map(this.state.nowlist, ((listValue, index) => {
+                    const end_at = new Date(listValue.auction.end_at);
+                    const started_at = new Date(listValue.auction.started_at);
+                    const now = new Date();
+                    const endToStart = this.dateDiffInDays(started_at, end_at);
+                    const nowToStart = this.dateDiffInDays(started_at, now);
+                    const progress = (nowToStart) / (endToStart) * 100;
+                    return (
+                      <Col sm="3" className="card1" key={index}>
+                        <div className="card3">
+                          <div>
+                            {_.get(listValue,['detail','main_image']) ? <img className="img1" style={{marginTop:0}} onClick={()=>this.goToDetail(listValue.id)} src={listValue.detail.main_image.url} alt="Card image cap"/> : <img className="img1" style={{marginTop:0}} onClick={()=>this.goToDetail(listValue.id)} src={require('../../assets/images/car.jpeg')} alt="Card image cap"/> }
+                          </div>
+                        <div className="card4">
+                          <div className="cardTitle">
+                            {listValue.detail.name}
+                          </div>
+                          <div className="cnt5">
+                            <div className="cnt2">
+                                      <Moment format="YYYY/MM" style={{fontSize:12}}>
+                                        {listValue.detail.initial_registration_date}
+                                      </Moment>
+                                      <div className="cardText">({listValue.detail.year}년형)</div>
+                                      <div className="cardText">{listValue.detail.mileage / 10000}만 km</div>
+                                      <div className="cardText">{listValue.detail.location}</div>
+                            </div>
+                            <div className='center2'>
+                                  <Circle percent={progress} style={{height: 40, width: 40}} strokeWidth="8"
+                                          strokeColor="#2E7DE1"/>
+                                  <div className='abs'>
+                                    {listValue.auction.bids_count}
+                                  </div>
+                            </div>
+                          </div>
+                        </div>
+                        </div>
+                      </Col>
+                    )
+                  }
                 )
+              )
               }
-            }
-          )
-        )
-        }
+            </Row>
           </Col>
         </Row>
       </Container>

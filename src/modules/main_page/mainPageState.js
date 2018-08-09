@@ -27,6 +27,7 @@ const initialState = {
   isBrandChecked: false,
   isGroupChecked: false,
   isModelChecked: false,
+  count: 0,
   cars:[],
   order: "recent",
   next:"",
@@ -61,6 +62,7 @@ export default function MainPageReducer(state: MainPageState = initialState, act
         ...state,
         cars: action.payload.results,
         next: action.payload.next,
+        count: action.payload.count,
         loading: false,
       };
     case MainPageTypes.GET_BRANDS_REQUEST:

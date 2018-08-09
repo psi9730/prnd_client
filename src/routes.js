@@ -1,16 +1,24 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
-import loginView from './modules/login/loginViewContainer'
-import homePageView from './modules/main_page/mainPageViewContainer'
-import cardDetailView from './modules/car_detail/carDetailViewContainer'
-
+import LoginView from './modules/login/loginViewContainer'
+import HomePageView from './modules/main_page/mainPageViewContainer'
+import CarDetailView from './modules/car_detail/carDetailViewContainer'
+import {getToken} from './utils/Storage';
 const routes = (
   <Router basename="/">
     <switch>
-      <Route path="/login" component={loginView} />
-      <Route path="/homePage" component={homePageView} />
-      <Route path="/cars/:id" component={cardDetailView} />
-      <Route exact path="/" component={loginView} />
+      <Route exact path="/" render={() => (
+        !getToken() ? <LoginView/> : <Redirect to="/homePage" />
+      )}/>
+      <Route exact path="/login" render={() => (
+        !getToken() ? <LoginView/> : <Redirect to="/homePage" />
+      )}/>
+      <Route exact path="/homePage" render={() => (
+        getToken() ? <HomePageView/> : <Redirect to="/login" />
+      )}/>
+      <Route exact path="/cars/:id" render={() => (
+        getToken() ? <CarDetailView/> : <Redirect to="/login" />
+      )} />
     </switch>
   </Router>
 )

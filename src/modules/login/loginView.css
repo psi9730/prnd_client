@@ -1,26 +1,18 @@
 
 .login1{
 }
-
 .card3{
   display: flex;
   justify-content: flex-start;
 }
-
 .cont{
   background-color: white;
 }
-
 .ro1{
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
-.display-3{
-  font-family: Times New Roman;
-}
-
 .bt1{
   background-color:#2E7DE1;
   margin-top:10px;
@@ -33,6 +25,16 @@
   width: 100px;
 }
 
-.mr-sm-2{
-  margin:5px;
+.cardText{
+  font-size: 12px;
+  margin-top: 4px;
+  background-color: transparent;
+}
+.cardTitle{
+  height:50px;
+  font-weight: bold;
+  font-size: 16px;
+  margin-top: 4px;
+  margin-bottom:4px;
+  background-color: #FFFFFF;
 }

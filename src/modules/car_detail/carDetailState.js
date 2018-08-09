@@ -13,7 +13,24 @@ type CarDetailState = {
 
 // Initial state
 const initialState = {
-  getCarRequest: Function,
+  name: "",
+  location:  "",
+  carNumber:  "",
+  year:  "",
+  fuel:  "",
+  color: "",
+  mileage:  "",
+  transmission:  "",
+  initialRegistrationDate:  "",
+  images:  [],
+  mainImage: null,
+  startedAt:  "",
+  endAt: "",
+  status:  "",
+  myBid: "",
+  bidsCount: "",
+  visitsCount:  "",
+
 }
 
 // Action Creators
@@ -27,25 +44,34 @@ export const { Types: CarDetailTypes, Creators: CarDetailActions } = createActio
 // Reducer
 export default function CarDetailReducer(state: CarDetailState = initialState, action: Object = {}): CarDetailState {
   switch (action.type) {
-    case CarDetailTypes.GET_CARD_REQUEST:
+    case CarDetailTypes.GET_CAR_REQUEST:
       return {
         ...state,
         loading: true,
       };
-    case CarDetailTypes.GET_CARD_SUCCESS:
+    case CarDetailTypes.GET_CAR_SUCCESS:
       return {
         ...state,
-        pet: action.payload.pet_id,
-        owner: action.payload.writer,
-        title: action.payload.title,
-        pictures: action.payload.pictures,
-        text: action.payload.text,
-        like: action.payload.like_id,
-        created: action.payload.date,
-        comments: action.payload.comments,
+        name: action.payload.detail.name,
+        location:  action.payload.detail.location,
+        carNumber:  action.payload.detail.car_number,
+        year:  action.payload.detail.year,
+        fuel:  action.payload.detail.fuel,
+        color: action.payload.detail.color,
+        mileage: action.payload.detail.mileage,
+        transmission:  action.payload.detail.transmission,
+        initialRegistrationDate:  action.payload.detail.initial_registrations_date,
+        images:  action.payload.detail.images,
+        mainImage: action.payload.detail.main_image,
+        startedAt: action.payload.auction.started_at,
+        endAt: action.payload.auction.end_at,
+        status: action.payload.auction.status,
+        myBid: action.payload.auction.my_bid,
+        bidsCount: action.payload.auction.bids_count,
+        visitsCount:  action.payload.auction.visits_count,
         loading:false,
       };
-    case CarDetailTypes.GET_CARD_FAILURE:
+    case CarDetailTypes.GET_CAR_FAILURE:
       return {
         ...state,
         loading: false,

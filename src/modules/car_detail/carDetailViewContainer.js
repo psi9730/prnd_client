@@ -2,19 +2,29 @@ import { connect } from 'react-redux'
 import _ from 'lodash'
 import { compose, withHandlers } from 'recompose'
 import actions from '../../store/actions';
-import CardDetailView from './carDetailView'
+import CarDetailView from './carDetailView'
+import { withRouter } from 'react-router-dom';
 
-export default connect(
+export default withRouter(connect(
   state => ({
-    pet: _.get(state,["cars","pet"]),
-    owner: _.get(state,["cars","owner"]),
-    title: _.get(state,["cars","title"]),
-    pictures: _.get(state,["cars","pictures"]),
-    text: _.get(state,["cars","text"]),
-    like: _.get(state,["cars","like"]),
-    created: _.get(state,["cars","created"]),
-    comments: _.get(state,["cars","comments"]),
-    loading: _.get(state, ['cars', 'loading']),
+    name: _.get(state,["cars","name"]),
+    location: _.get(state,["cars","location"]),
+    carNumber: _.get(state,["cars","carNumber"]),
+    year: _.get(state,["cars","year"]),
+    fuel: _.get(state,["cars","fuel"])==='gasoline' ? ("가솔린") : (_.get(state,["cars","fuel"])==='diesel' ? ("디젤") : (_.get(state,["cars","fuel"])==='hybrid'? ('하이브리드'): _.get(state,["cars","fuel"])==='electric' ? '전기': '바이퓨얼')),
+    color: _.get(state,["cars","color"]),
+    mileage: _.get(state,["cars","mileage"]),
+    transmission: _.get(state,["cars","transmission"])==='auto' ? '오토' : '수동',
+    initialRegistrationDate: _.get(state,["cars","initialRegistrationDate"]),
+    images: _.get(state,["cars","images"]),
+    mainImage: _.get(state,["cars","mainImage"]),
+    startedAt: _.get(state,["cars","startedAt"]),
+    endAt: _.get(state,["cars","endAt"]),
+    status: _.get(state,["cars","status"]),
+    myBid: _.get(state,["cars","myBid"]),
+    bidsCount: _.get(state,["cars","bidsCount"]),
+    visitsCount: _.get(state,["cars","visitsCount"]),
+
   }),
   actions,
 )(
@@ -22,6 +32,7 @@ export default connect(
     withHandlers({
     }),
   )(
-    CardDetailView
+    CarDetailView
   )
+)
 )
