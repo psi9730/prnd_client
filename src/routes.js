@@ -19,13 +19,13 @@ const routes = (
         )}
       />
       <Route
-        exact path="/homePage" render={() => (
-          getToken() ? <HomePageView /> : <Redirect to="/login" />
+        exact path="/cars/:id" render={() => (
+          getToken() ? <CarDetailView /> : <Redirect to="/login" />
         )}
       />
       <Route
-        exact path="/cars/:id" render={() => (
-          getToken() ? <CarDetailView /> : <Redirect to="/login" />
+        path="/homePage" render={() => (
+          getToken() ? <HomePageView /> : <Redirect to="/login" />
         )}
       />
     </switch>

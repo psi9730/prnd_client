@@ -2,11 +2,11 @@
   margin:10px;
 }
 
-.img1{
+.imgg1{
   margin-top:50px;
 }
 
-.img2{
+.imgg2{
   margin:5px;
 }
 .mainImage{
@@ -16,18 +16,18 @@
   flex-shrink: 1;
   margin:12px;
 }
-.cnt1{
+.cntt1{
   flex:1;
   display: flex;
   background-color: #FFFFFF;
   flex-direction: row;
   justify-content: flex-start;
 }
-.cnt2{
+.cntt2{
   display: flex;
   flex-direction: column;
 }
-.cnt3{
+.cntt3{
   flex:1;
   display: flex;
   padding:15px;
@@ -35,14 +35,14 @@
   justify-content: flex-start;
   box-shadow: 3px 3px darkgray;
 }
-.cnt4{
+.cntt4{
    flex:1;
    display: flex;
    background-color: #FFFFFF;
    flex-direction: row;
    justify-content: flex-end;
 }
-.cnt5{
+.cntt5{
   display: flex;
   flex-direction: row;
 }

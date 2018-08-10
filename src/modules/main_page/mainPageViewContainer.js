@@ -1,13 +1,14 @@
 import { connect } from 'react-redux';
 import _ from 'lodash';
 import { compose, withHandlers } from 'recompose';
+import { withRouter } from 'react-router-dom';
 import actions from '../../store/actions';
 import MainPageView from './mainPageView';
-import { withRouter } from 'react-router-dom';
 
 export default withRouter(connect(
   state => ({
     cars: _.get(state, ['main', 'cars']),
+    order: _.get(state, ['main', 'order']),
     next: _.get(state, ['main', 'next']),
     brands: _.get(state, ['main', 'brands']),
     groups: _.get(state, ['main', 'groups']),

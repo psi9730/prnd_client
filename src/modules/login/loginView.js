@@ -8,7 +8,6 @@ import { Input, Alert, Button, Container, Row, Col, Card, CardImg, CardText, Car
   CarouselCaption,
   Jumbotron } from 'reactstrap';
 import autoBind from 'react-autobind';
-import { getToken } from '../../utils/Storage';
 import './loginView.css';
 
 

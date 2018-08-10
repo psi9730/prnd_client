@@ -37,7 +37,6 @@ class CarDetailView extends Component<Props, State> {
     this.props.getCarRequest(this.props.match.params.id).then(() => {
       _.forEach(this.props.images, (image, index) => {
         if (image.is_main === true) {
-          console.log(this.state.activeIndex);
           this.setState({ activeIndex: index });
         }
       });
@@ -60,17 +59,14 @@ class CarDetailView extends Component<Props, State> {
   }
   dateDiffInDays(a, b) {
     // Discard the time and time-zone information.
-    const utc1 = Date.UTC(a.getFullYear(), a.getMonth(), a.getDate());
-    const utc2 = Date.UTC(b.getFullYear(), b.getMonth(), b.getDate());
+    const utc1 = Date.UTC(a.getFullYear(), a.getMonth(), a.getDate(),a.getHours(),a.getMinutes(),a.getSeconds());
+    const utc2 = Date.UTC(b.getFullYear(), b.getMonth(), b.getDate(),a.getHours(),a.getMinutes(),a.getSeconds());
     return Math.floor((utc2 - utc1) / _MS_PER_DAY);
   }
   getStringDateDiffInDays(a, b) {
     // Discard the time and time-zone information.
-    const utc1 = Date.UTC(a.getFullYear(), a.getMonth(), a.getDate());
-    const utc2 = Date.UTC(b.getFullYear(), b.getMonth(), b.getDate());
     const date = new Date();
-    date.setTime(utc2 - utc1);
-    console.log(date, 'date');
+    date.setTime(b-a);
     return date;
   }
   render() {
@@ -84,7 +80,7 @@ class CarDetailView extends Component<Props, State> {
               <Container>
                 <Row>
                   <Col sm={9}>
-                    <div className="cnt2">
+                    <div className="cntt2">
                       <div className="mainImage">
                         <img src={_.get(_.nth(this.props.images, activeIndex), 'url')} width="100%" height="450" alt={'url'} />
                           { this.props.status === 'approved' ?
@@ -127,7 +123,7 @@ class CarDetailView extends Component<Props, State> {
                           )
                         }
                         </div>
-                        <div className="cnt1" style={{ flexBasis: 'auto', flexGrow: 1, flexShrink: 4, width: '100%' }}>
+                        <div className="cntt1" style={{ flexBasis: 'auto', flexGrow: 1, flexShrink: 4, width: '100%' }}>
                         {
                           _.map(this.props.images, (image, index) => {
                             return (
@@ -146,12 +142,12 @@ class CarDetailView extends Component<Props, State> {
                     </div>
                   </Col>
                   <Col sm={3}>
-                    <div className="cnt3">
-                        <div className="cnt5" style={{ flexGrow: 0, flexShrink: 0, flexBasis: 'auto', backgroundColor: '#FFFFFF', marginTop: 10, marginBottom: 10 }}>
-                          <div className="cnt1">
+                    <div className="cntt3">
+                        <div className="cntt5" style={{ flexGrow: 0, flexShrink: 0, flexBasis: 'auto', backgroundColor: '#FFFFFF', marginTop: 10, marginBottom: 10 }}>
+                          <div className="cntt1">
                           {this.props.carNumber}
                         </div>
-                              <div className="cnt4">
+                              <div className="cntt4">
                           {this.props.visitsCount}명 조회
                         </div>
                       </div>
@@ -163,13 +159,13 @@ class CarDetailView extends Component<Props, State> {
                         {this.props.initialRegistrationDate}
                       </Moment>
                       <div className="cardText">({this.props.year}년형)</div>
-                      <div className="cardText">{this.props.mileage / 10000}만 km</div>
+                      <div className="cardText">{this.props.mileage} km</div>
                       <div className="cardText">{this.props.fuel} / {this.props.transmission} / {this.props.color}</div>
                       <div className="cardText" style={{ marginBottom: 20 }}>{this.props.location}</div>
                       <div className="grayLine" />
-                      <div className="cnt5" style={{ flexGrow: 0, flexShrink: 0, flexBasis: 'auto', backgroundColor: '#FFFFFF', marginTop: 10, marginBottom: 10 }}>
-                        <div className="cnt1">
-                          <div className="cnt2">
+                      <div className="cntt5" style={{ flexGrow: 0, flexShrink: 0, flexBasis: 'auto', backgroundColor: '#FFFFFF', marginTop: 10, marginBottom: 10 }}>
+                        <div className="cntt1">
+                          <div className="cntt2">
                             <div>내 견적</div>
                             {_.get(this.props.myBid, 'price') ?
                               <div style={{ color: '#2E7DE1' }}>{_.get(this.props.myBid, 'price')}만원</div> :
@@ -177,7 +173,7 @@ class CarDetailView extends Component<Props, State> {
                             }
                             </div>
                         </div>
-                        <div className="cnt4">
+                        <div className="cntt4">
                           <Button className="btt11" style={{ backgroundColor: '#2E7DE1', borderWidth: 0 }} >{
                             <span style={{ color: '#FFFFFF' }}>매입견적 수정</span>
                           }
@@ -186,11 +182,11 @@ class CarDetailView extends Component<Props, State> {
                       </div>
                     </div>
                     <div>
-                      <div className="cnt5" style={{ flexGrow: 0, flexShrink: 0, flexBasis: 'auto', backgroundColor: '#FFFFFF', marginTop: 10, marginBottom: 10 }}>
-                        <div className="cnt1" style={{ fontSize: 12 }}>
+                      <div className="cntt5" style={{ flexGrow: 0, flexShrink: 0, flexBasis: 'auto', backgroundColor: '#FFFFFF', marginTop: 10, marginBottom: 10 }}>
+                        <div className="cntt1" style={{ fontSize: 12 }}>
                     차량정보가 잘못되었나요?
                         </div>
-                        <div className="cnt4" style={{ color: '#2E7DE1', fontSize: 12 }}>
+                        <div className="cntt4" style={{ color: '#2E7DE1', fontSize: 12 }}>
                     신고하기
                         </div>
                       </div>

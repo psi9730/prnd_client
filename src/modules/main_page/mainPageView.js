@@ -1,18 +1,13 @@
 // @flow
-import React, { Component } from 'react'
-import { Button, Container, Row, Col } from 'reactstrap'
-import autoBind from 'react-autobind'
+import React, { Component } from 'react';
+import { Button, Container, Row, Col, Dropdown,DropdownItem, DropdownToggle,DropdownMenu } from 'reactstrap';
+import autoBind from 'react-autobind';
 import qs from 'qs';
 import { Circle } from 'rc-progress';
-import './cardView.css'
 import Moment from 'react-moment';
-import Navigator from '../top_navigator/navigatorContainer'
-
-type State = {
-  username: string,
-  password: string,
-  secure: boolean,
-};
+import './cardView.css';
+import Navigator from '../top_navigator/navigatorContainer';
+import Select from 'react-select';
 
 type Props = {
   brands: any,
@@ -36,7 +31,18 @@ type Props = {
   loading: boolean,
 };
 
+type State = {
+  username: string,
+  password: string,
+  secure: boolean,
+};
+
 const _MS_PER_DAY = 1000 * 60 * 60 * 24;
+const options = [
+  { value: '최근등록순', label: '최근등록순' },
+  { value:  '종료임박순', label: '종료임박순' },
+  { value: '응찰적은순', label:'응찰적은순'}
+];
 
 class MainPageView extends Component<Props, State> {
   constructor(props) {
@@ -44,6 +50,7 @@ class MainPageView extends Component<Props, State> {
     autoBind(this);
     this.state = {
       index: 0,
+      selectedOption: null,
       selectedOption2: '공매',
       nowlist:[],
     };
@@ -93,7 +100,16 @@ class MainPageView extends Component<Props, State> {
   componentWillUnmount() {
     window.removeEventListener('scroll', this.onScroll, false);
   }
-
+  handleChange = (selectedOption) => {
+    this.setState({ selectedOption });
+    if(selectedOption.value==='최근등록순'){
+      this.props.setOrderRequest('recent').then(()=>this.getCarsRequest()).catch((e)=>console.log(e));
+    }else if(selectedOption.value==='종료임박순'){
+      this.props.setOrderRequest('bids_count').then(()=>this.getCarsRequest()).catch((e)=>console.log(e));
+    }else if(selectedOption.value==='응찰적은순'){
+      this.props.setOrderRequest('end_time').then(()=>this.getCarsRequest()).catch((e)=>console.log(e));
+    }
+  }
   onScroll = () => {
     if (
       (window.innerHeight + window.scrollY) >= (document.body.offsetHeight - 500) &&
@@ -190,6 +206,13 @@ class MainPageView extends Component<Props, State> {
   }
   goToDetail(id){
     this.props.history.push({   pathname: `/cars/${id}`});
+  }
+  parseOrder(order){
+   if(order==='recent')
+     return '최근등록순';
+   else if(order==='bids_count')
+     return '응찰적은순';
+   else return '종료임박순';
   }
   render() {
     return (
@@ -320,19 +343,24 @@ class MainPageView extends Component<Props, State> {
           </Col>
           <Col className="cnt4">
             <Row>
-              <div className="cnt5" style={{padding:30}}>
-                <div className="cnt8">
-                  <div>차량 {this.props.count}대</div>
-                  <div>
-                    <img className="img2"onClick={()=>this.getCarsRequest()} src={require('../../assets/images/refresh.png')} alt="Card image cap"/>
+                <div className="cnt5" style={{padding:30}}>
+                  <div className="cnt8">
+                    <div>차량 {this.props.count}대</div>
+                    <div>
+                      <img className="img2"onClick={()=>this.getCarsRequest()} src={require('../../assets/images/refresh.png')} alt="Card image cap"/>
+                    </div>
+                  </div>
+                  <div className="cnt7">
+                    <div style={{flexBasis: 200, flexGrow:0, flexShrink:0}}>
+                      <Select
+                        value={this.props.selectedOption}
+                        onChange={this.handleChange}
+                        placeholder={this.parseOrder(this.props.order)}
+                        options={options}
+                      />
+                    </div>
                   </div>
                 </div>
-                <div className="cnt7">
-                  <div>
-
-                  </div>
-                </div>
-              </div>
             </Row>
             <Row>
               {_.map(this.state.nowlist, ((listValue, index) => {
@@ -343,7 +371,7 @@ class MainPageView extends Component<Props, State> {
                     const nowToStart = this.dateDiffInDays(started_at, now);
                     const progress = (nowToStart) / (endToStart) * 100;
                     return (
-                      <Col sm="3" className="card1" key={index}>
+                      <Col sm="3" xs="12" className="card1" key={index}>
                         <div className="card3">
                           <div>
                             {_.get(listValue,['detail','main_image']) ? <img className="img1" style={{marginTop:0}} onClick={()=>this.goToDetail(listValue.id)} src={listValue.detail.main_image.url} alt="Card image cap"/> : <img className="img1" style={{marginTop:0}} onClick={()=>this.goToDetail(listValue.id)} src={require('../../assets/images/car.jpeg')} alt="Card image cap"/> }
@@ -364,7 +392,7 @@ class MainPageView extends Component<Props, State> {
                               <div className='center2'>
                                 <Circle percent={progress} style={{height: 40, width: 40}} strokeWidth="8"
                                         strokeColor="#2E7DE1"/>
-                                <div className='abs'>
+                                <div className='abs6'>
                                   {listValue.auction.bids_count}
                                 </div>
                               </div>
