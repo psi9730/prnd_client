@@ -1,5 +1,5 @@
 ### initial
-
+'git clone git@github.com:psi9730/prnd_client.git'
 'npm install'
 ### Run
 
