@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cddba2f0-06a3-4906-beb1-456af59b0e68" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
       <change beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change beforePath="$PROJECT_DIR$/src/modules/car_detail/carDetailView.css" afterPath="$PROJECT_DIR$/src/modules/car_detail/carDetailView.css" />
-      <change beforePath="$PROJECT_DIR$/src/modules/car_detail/carDetailView.js" afterPath="$PROJECT_DIR$/src/modules/car_detail/carDetailView.js" />
-      <change beforePath="$PROJECT_DIR$/src/modules/login/loginView.js" afterPath="$PROJECT_DIR$/src/modules/login/loginView.js" />
-      <change beforePath="$PROJECT_DIR$/src/modules/main_page/cardView.css" afterPath="$PROJECT_DIR$/src/modules/main_page/cardView.css" />
-      <change beforePath="$PROJECT_DIR$/src/modules/main_page/mainPageView.js" afterPath="$PROJECT_DIR$/src/modules/main_page/mainPageView.js" />
-      <change beforePath="$PROJECT_DIR$/src/modules/main_page/mainPageViewContainer.js" afterPath="$PROJECT_DIR$/src/modules/main_page/mainPageViewContainer.js" />
-      <change beforePath="$PROJECT_DIR$/src/routes.js" afterPath="$PROJECT_DIR$/src/routes.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -61,10 +52,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mainPageView.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="mainPageView.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/modules/main_page/mainPageView.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="431">
+            <state relative-caret-position="-801">
               <caret line="82" column="150" lean-forward="false" selection-start-line="82" selection-start-column="143" selection-end-line="82" selection-end-column="150" />
               <folding>
                 <element signature="e#9#50#0" expanded="true" />
@@ -113,11 +104,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
+      <file leaf-file-name="package.json" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="124" column="17" lean-forward="false" selection-start-line="124" selection-start-column="5" selection-end-line="124" selection-end-column="17" />
+            <state relative-caret-position="151">
+              <caret line="88" column="0" lean-forward="true" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -137,7 +128,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>card3</find>
       <find>cardTitle</find>
       <find>cnt2</find>
       <find>this.props.getCar</find>
@@ -167,6 +157,7 @@
       <find>handleChange</find>
       <find>dateDiffindays</find>
       <find>console</find>
+      <find>babel</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -208,7 +199,6 @@
         <option value="$PROJECT_DIR$/src/store/reducer.js" />
         <option value="$PROJECT_DIR$/src/store/actions.js" />
         <option value="$PROJECT_DIR$/src/modules/top_navigator/navigator.js" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/modules/main_page/mainPageSaga.js" />
         <option value="$PROJECT_DIR$/src/modules/top_navigator/navigator.css" />
         <option value="$PROJECT_DIR$/src/components/templates/PageTemplate/scroll.css" />
@@ -232,6 +222,7 @@
         <option value="$PROJECT_DIR$/src/routes.js" />
         <option value="$PROJECT_DIR$/src/modules/car_detail/carDetailView.js" />
         <option value="$PROJECT_DIR$/src/modules/main_page/mainPageView.js" />
+        <option value="$PROJECT_DIR$/package.json" />
       </list>
     </option>
   </component>
@@ -420,23 +411,22 @@
       <workItem from="1529337904595" duration="35374000" />
       <workItem from="1533605142815" duration="32303000" />
       <workItem from="1533697967524" duration="52543000" />
-      <workItem from="1533810258975" duration="8780000" />
+      <workItem from="1533810258975" duration="9567000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="402939000" />
+    <option name="totallyTimeSpent" value="403726000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-180" y="-1028" width="1602" height="959" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21098627" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827586" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32807216" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.062006764" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.062006764" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -820,14 +810,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="124" column="17" lean-forward="false" selection-start-line="124" selection-start-column="5" selection-end-line="124" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/modules/main_page/cardView.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="316">
@@ -873,11 +855,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/modules/main_page/mainPageView.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="431">
+        <state relative-caret-position="-801">
           <caret line="82" column="150" lean-forward="false" selection-start-line="82" selection-start-column="143" selection-end-line="82" selection-end-column="150" />
           <folding>
             <element signature="e#9#50#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="88" column="0" lean-forward="true" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
