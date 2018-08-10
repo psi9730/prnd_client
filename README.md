@@ -4,7 +4,7 @@
 ### Run
 
 Once you have installed the dependencies, you can use `npm start` to run a development server.
-
+Open browser and enter "http://localhost:3000/"
 ### description
 보내주신 api을 이용하는 헤이딜러 간단홈페이지를 제작했습니다.
 url: /login
