@@ -1,13 +1,13 @@
-import React from 'react'
+import React from 'react';
 import {
   Row, Col, Container, Collapse, Navbar, NavbarBrand, Nav, NavItem,
   Button,
-} from 'reactstrap'
-import autoBind from 'react-autobind'
-import { withRouter } from 'react-router-dom'
-import './navigator.css'
-import Storage, { KEYS } from '../../utils/Storage'
-import { clearAuthenticationToken } from '../../utils/authentication'
+} from 'reactstrap';
+import autoBind from 'react-autobind';
+import { withRouter } from 'react-router-dom';
+import './navigator.css';
+import Storage, { KEYS } from '../../utils/Storage';
+import { clearAuthenticationToken } from '../../utils/authentication';
 
 type Props = {
   setUsername: Function,
@@ -16,25 +16,25 @@ type Props = {
 type State = {
 
 }
-export class Navigator extends React.Component  <Props, State>{
+export class Navigator extends React.Component <Props, State> {
   constructor(props) {
     super(props);
     this.state = {
       selectedOption: '경매',
-    }
-    autoBind(this)
+    };
+    autoBind(this);
   }
 
   componentWillMount() {
-    this.props.setUsername(Storage.get(KEYS.username))
+    this.props.setUsername(Storage.get(KEYS.username));
   }
   goToBargain() {
-    this.props.history.push({ pathname: '/homePage' })
+    this.props.history.push({ pathname: '/homePage' });
   }
   onLogoutPressed() {
     if (window.confirm('로그아웃 하시겠습니까?')) {
-      clearAuthenticationToken()
-      this.props.history.push({ pathname: '/login' })
+      clearAuthenticationToken();
+      this.props.history.push({ pathname: '/login' });
     }
   }
   render() {
@@ -50,9 +50,9 @@ export class Navigator extends React.Component  <Props, State>{
               </Row>
             </NavbarBrand>
             <Collapse isOpen={this.state.isOpen} navbar>
-              <Nav className="ml-auto" navbar>
+                <Nav className="ml-auto" navbar>
                 <NavItem className="Navi1" >
-                  <Button className="btt11" style={{ backgroundColor: '#2E7DE1', borderWidth: 0 }} onClick={() => this.goToBargain()}>{
+                    <Button className="btt11" style={{ backgroundColor: '#2E7DE1', borderWidth: 0 }} onClick={() => this.goToBargain()}>{
                     this.state.selectedOption === '경매' ?
                       <span
                         style={{ color: 'white' }}
@@ -61,9 +61,9 @@ export class Navigator extends React.Component  <Props, State>{
                       >경매</span>
                   }
                   </Button>
-                </NavItem>
+                  </NavItem>
                 <NavItem className="Navi1">
-                  <Button className="btt11" style={{ backgroundColor: '#2E7DE1', borderWidth: 0 }}>{
+                      <Button className="btt11" style={{ backgroundColor: '#2E7DE1', borderWidth: 0 }}>{
                     this.state.selectedOption === '내 응찰' ?
                       <span
                         style={{ color: 'white' }}
@@ -72,9 +72,9 @@ export class Navigator extends React.Component  <Props, State>{
                       >내 응찰</span>
                   }
                   </Button>
-                </NavItem>
-                <NavItem className="Navi1">
-                  <Button className="btt11" style={{ backgroundColor: '#2E7DE1', borderWidth: 0 }}>{
+                    </NavItem>
+                  <NavItem className="Navi1">
+                        <Button className="btt11" style={{ backgroundColor: '#2E7DE1', borderWidth: 0 }}>{
                     this.state.selectedOption === '내 거래' ?
                       <span
                         style={{ color: 'white' }}
@@ -83,8 +83,8 @@ export class Navigator extends React.Component  <Props, State>{
                       >내 거래</span>
                   }
                   </Button>
-                </NavItem>
-                <NavItem className="Navi1">
+                      </NavItem>
+                  <NavItem className="Navi1">
                   <Button className="btt11" style={{ backgroundColor: '#2E7DE1', borderWidth: 0 }}>{
                     this.state.selectedOption === '공지사항' ?
                       <span
@@ -93,34 +93,34 @@ export class Navigator extends React.Component  <Props, State>{
                         style={{ color: 'gray' }}
                       >공지사항</span>
                   }
-                  </Button>
+                    </Button>
                 </NavItem>
-                <NavItem>
+                    <NavItem>
                   <Button className="btt11" style={{ backgroundColor: '#2E7DE1', borderWidth: 0 }}>
-                    <img width="20" height="20" src={require('../../assets/images/user-image.png')} alt="Card image cap" />
-                  </Button>
+                        <img width="20" height="20" src={require('../../assets/images/user-image.png')} alt="Card image cap" />
+                      </Button>
                 </NavItem>
-                <NavItem>
+                      <NavItem>
                   <Button className="btt11" style={{ backgroundColor: '#2E7DE1', borderWidth: 0 }}>
-                    <span style={{ color: 'white' }}> {this.props.username} </span>
-                  </Button>
+                          <span style={{ color: 'white' }}> {this.props.username} </span>
+                        </Button>
                 </NavItem>
-                <NavItem>
+                        <NavItem>
                   <Button className="btt11" style={{ backgroundColor: '#2E7DE1', borderWidth: 0 }}>
-                    <img width="20" height="20" src={require('../../assets/images/notify.png')} alt="Card image cap" />
-                  </Button>
+                            <img width="20" height="20" src={require('../../assets/images/notify.png')} alt="Card image cap" />
+                          </Button>
                 </NavItem>
                 <NavItem>
-                  <Button className="btt12" style={{ backgroundColor: '#2E7DE1', borderWidth: 0 }} onClick={this.onLogoutPressed}>
+                    <Button className="btt12" style={{ backgroundColor: '#2E7DE1', borderWidth: 0 }} onClick={this.onLogoutPressed}>
                     <img width="25" height="25" src={require('../../assets/images/logout.png')} alt="Card image cap" />
                   </Button>
-                </NavItem>
+                  </NavItem>
               </Nav>
-            </Collapse>
+              </Collapse>
           </Navbar>
         </Container>
       </div>
-    )
+    );
   }
 }
-export default withRouter(Navigator)
+export default withRouter(Navigator);

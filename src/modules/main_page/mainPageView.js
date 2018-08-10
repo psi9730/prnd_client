@@ -1,9 +1,7 @@
 // @flow
 import React, { Component } from 'react'
-import { Input, Alert, Button, Container, Row, Col } from 'reactstrap'
+import { Button, Container, Row, Col } from 'reactstrap'
 import autoBind from 'react-autobind'
-import { Card, CardImg, CardText, CardBody,
-  CardTitle, CardSubtitle, CardDeck} from 'reactstrap';
 import qs from 'qs';
 import { Circle } from 'rc-progress';
 import './cardView.css'
@@ -54,17 +52,13 @@ class MainPageView extends Component<Props, State> {
     const search_ = this.props.location.search;
     let search;
     search_ && (search=qs.parse(search_.slice(1,search_.length)));
-    console.log(search,'search');
     _.get(search,['order']) && this.props.setOrderRequest(search.order)
       this.props.getBrandsRequest().then(()=>{
         let index;
-        console.log(_.get(search,['brand']),'here');
         _.get(search,['brand']) && (index = _.findIndex(this.props.brands,function(brand){
-          console.log(brand);
           if(brand.id.toString()===_.get(search,['brand']).toString())
             return true;
         }));
-        console.log(index);
         index!==-1 && _.get(search,['brand']) && this.props.setBrandRequest(_.nth(this.props.brands,index).id, index,true).then(()=>{
               this.props.getModelGroupsRequest( _.get(search,['brand'])).then(()=>{
                 let groupIndex;
@@ -121,7 +115,6 @@ class MainPageView extends Component<Props, State> {
   onPaginatedSearch(){
     let params = this.getParams(this.props.next);
     let paramsString = qs.stringify(params);
-    console.log(params,'params');
     paramsString && this.props.getCarAllRequest("?"+paramsString).then(()=>{
       this.setState({nowlist: this.state.nowlist.concat(this.props.cars)},console.log(this.state.nowlist,'nowlist'))
     }).catch((e)=>console.log(e));
@@ -141,9 +134,7 @@ class MainPageView extends Component<Props, State> {
       this.props.modelValue && (jsonObject.model=this.props.modelValue);
       this.props.brandValue && (jsonObject.brand=this.props.brandValue);
       this.props.order && (jsonObject.order=this.props.order);
-      console.log(jsonObject,'jsonObject');
       this.props.getCarAllRequest('?'+qs.stringify(jsonObject)).then(()=>{
-        console.log("i will push");
         this.setState({
           nowlist: this.props.cars,
         })
@@ -207,45 +198,42 @@ class MainPageView extends Component<Props, State> {
         <div className="cnt2">
           <img className="scroll" onClick={()=>this.goToTop()} src={require('../../assets/images/go_up.png')} alt="Card image cap"/>
           <Container>
-          <div className="navLeft">
-            <Button className="btt1" style={{backgroundColor: 'white', borderWidth:0}} onClick={() => this.goToBargain()}>
+            <div className="navLeft">
+              <Button className="btt1" style={{backgroundColor: 'white', borderWidth:0}} onClick={() => this.goToBargain()}>
                 {
                   this.state.selectedOption2 === '일반' ?
                     <div className="bttStyle1">
-                <span
-                  style={{ color: '#2E7DE1' }}
-                >일반</span><span className='bottomLine'/>
-                    </div>: <div className="bttStyle1"><span
-                  style={{ color: 'gray' }}
-                >일반</span>
+                      <span style={{ color: '#2E7DE1' }}>일반</span>
+                      <span className='bottomLine'/>
+                    </div>:
+                    <div className="bttStyle1">
+                      <span style={{ color: 'gray' }}>일반</span>
                     </div>
                 }
-            </Button>
-            <Button className="btt1"  style={{backgroundColor: 'white', borderWidth:0}} onClick={() => this.goToBargain()}>{
-              this.state.selectedOption2 === '공매' ?
-                <div className="bttStyle1">
-                <span
-                  style={{ color: '#2E7DE1' }}
-                >공매</span><span className='bottomLine'/>
-                </div>: <div className="bttStyle1"><span
-                  style={{ color: 'gray' }}
-                >공매</span>
-                </div>
-            }
-            </Button>
-            <Button className="btt1"  style={{backgroundColor: 'white', borderWidth:0}} onClick={() => this.goToBargain()}>{
-              this.state.selectedOption2 === '찜' ?
-                <div className="bttStyle1">
-                <span
-                  style={{ color: '#2E7DE1' }}
-                >찜</span><span className='bottomLine'/>
-                </div>: <div className="bttStyle1"><span
-                  style={{ color: 'gray' }}
-                >찜</span>
-                </div>
-            }
-            </Button>
-          </div>
+              </Button>
+              <Button className="btt1"  style={{backgroundColor: 'white', borderWidth:0}} onClick={() => this.goToBargain()}>{
+                this.state.selectedOption2 === '공매' ?
+                  <div className="bttStyle1">
+                    <span style={{ color: '#2E7DE1' }}>공매</span>
+                    <span className='bottomLine'/>
+                  </div>:
+                  <div className="bttStyle1">
+                    <span style={{ color: 'gray' }}>공매</span>
+                  </div>
+              }
+              </Button>
+              <Button className="btt1"  style={{backgroundColor: 'white', borderWidth:0}} onClick={() => this.goToBargain()}>{
+                this.state.selectedOption2 === '찜' ?
+                  <div className="bttStyle1">
+                    <span style={{ color: '#2E7DE1' }}>찜</span>
+                    <span className='bottomLine'/>
+                  </div>:
+                  <div className="bttStyle1">
+                    <span style={{ color: 'gray' }}>찜</span>
+                  </div>
+              }
+              </Button>
+            </div>
           </Container>
       <Container className="cnt1">
         <Row>
@@ -261,15 +249,18 @@ class MainPageView extends Component<Props, State> {
                     <div key={brandIndex}>
                       <div className='brand'>
                         <div className="input">
-                        <input
-                          name={brandIndex}
-                          value={brand.id}
-                          type="checkbox"
-                          checked={this.props.brandIndex.toString()===brandIndex.toString()}
-                          onChange={this.handleBrandChange}
-                        />
+                          <input
+                            name={brandIndex}
+                            value={brand.id}
+                            type="checkbox"
+                            checked={this.props.brandIndex.toString()===brandIndex.toString()}
+                            onChange={this.handleBrandChange}
+                          />
                         </div>
-                          <div className='center'><span className='text1'>{' '} {brand.name}</span> <span className='text2'>{brand.auctions_count}</span></div>
+                        <div className='center'>
+                          <span className='text1'>{' '} {brand.name}</span>
+                          <span className='text2'>{brand.auctions_count}</span>
+                        </div>
                       </div>
                       {
                         this.props.isBrandChecked && this.props.brandIndex.toString()===brandIndex.toString() && <div className='grayLine'/>
@@ -280,13 +271,17 @@ class MainPageView extends Component<Props, State> {
                             <div key={groupIndex}>
                               <div className='group'>
                                 <div className="input">
-                                <input
-                                  name={groupIndex}
-                                  value={group.id}
-                                  type="checkbox"
-                                  checked={this.props.groupIndex.toString()===groupIndex.toString()}
-                                  onChange={this.handleGroupChange} /></div>
-                                <div className='center'><span className='text1'>{' '} {group.name}</span> <span className='text2'>{group.auctions_count}</span></div>
+                                  <input
+                                    name={groupIndex}
+                                    value={group.id}
+                                    type="checkbox"
+                                    checked={this.props.groupIndex.toString()===groupIndex.toString()}
+                                    onChange={this.handleGroupChange} />
+                                </div>
+                                <div className='center'>
+                                  <span className='text1'>{' '} {group.name}</span>
+                                  <span className='text2'>{group.auctions_count}</span>
+                                </div>
                               </div>
                               {
                                 this.props.isGroupChecked && this.props.groupIndex.toString()===groupIndex.toString() && <div className='grayLine'/>
@@ -297,14 +292,17 @@ class MainPageView extends Component<Props, State> {
                                     <div key={modelIndex}>
                                       <div  className='model'>
                                         <div className="input">
-                                        <input
-                                          name={modelIndex}
-                                          value={model.id}
-                                          type="checkbox"
-                                          checked={this.props.modelIndex.toString()===modelIndex.toString()}
-                                          onChange={this.handleModelChange} />
+                                          <input
+                                            name={modelIndex}
+                                            value={model.id}
+                                            type="checkbox"
+                                            checked={this.props.modelIndex.toString()===modelIndex.toString()}
+                                            onChange={this.handleModelChange} />
                                         </div>
-                                        <div className='center'><span className='text1'>{' '} {model.name}</span> <span className='text2'>{model.auctions_count}</span></div>
+                                        <div className='center'>
+                                          <span className='text1'>{' '} {model.name}</span>
+                                          <span className='text2'>{model.auctions_count}</span>
+                                        </div>
                                       </div>
                                     </div>
                                   )
@@ -350,27 +348,27 @@ class MainPageView extends Component<Props, State> {
                           <div>
                             {_.get(listValue,['detail','main_image']) ? <img className="img1" style={{marginTop:0}} onClick={()=>this.goToDetail(listValue.id)} src={listValue.detail.main_image.url} alt="Card image cap"/> : <img className="img1" style={{marginTop:0}} onClick={()=>this.goToDetail(listValue.id)} src={require('../../assets/images/car.jpeg')} alt="Card image cap"/> }
                           </div>
-                        <div className="card4">
-                          <div className="cardTitle">
-                            {listValue.detail.name}
-                          </div>
-                          <div className="cnt5">
-                            <div className="cnt2">
-                                      <Moment format="YYYY/MM" style={{fontSize:12}}>
-                                        {listValue.detail.initial_registration_date}
-                                      </Moment>
-                                      <div className="cardText">({listValue.detail.year}년형)</div>
-                                      <div className="cardText">{listValue.detail.mileage / 10000}만 km</div>
-                                      <div className="cardText">{listValue.detail.location}</div>
+                          <div className="card4">
+                            <div className="cardTitle">
+                              {listValue.detail.name}
                             </div>
-                            <div className='center2'>
-                                  <Circle percent={progress} style={{height: 40, width: 40}} strokeWidth="8"
-                                          strokeColor="#2E7DE1"/>
-                                  <div className='abs'>
-                                    {listValue.auction.bids_count}
-                                  </div>
+                            <div className="cnt5">
+                              <div className="cnt2">
+                                <Moment format="YYYY/MM" style={{fontSize:12}}>
+                                  {listValue.detail.initial_registration_date}
+                                </Moment>
+                                <div className="cardText">({listValue.detail.year}년형)</div>
+                                <div className="cardText">{listValue.detail.mileage / 10000}만 km</div>
+                                <div className="cardText">{listValue.detail.location}</div>
+                              </div>
+                              <div className='center2'>
+                                <Circle percent={progress} style={{height: 40, width: 40}} strokeWidth="8"
+                                        strokeColor="#2E7DE1"/>
+                                <div className='abs'>
+                                  {listValue.auction.bids_count}
+                                </div>
+                              </div>
                             </div>
-                          </div>
                         </div>
                         </div>
                       </Col>
@@ -379,10 +377,10 @@ class MainPageView extends Component<Props, State> {
                 )
               )
               }
+               </Row>
+              </Col>
             </Row>
-          </Col>
-        </Row>
-      </Container>
+          </Container>
         </div>
       </div>
     );

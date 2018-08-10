@@ -1,12 +1,12 @@
 // @flow
 
-import { createActions } from 'reduxsauce'
+import { createActions } from 'reduxsauce';
 /*
 import Storage from '../../utils/petStagramStorage'
 import { getAuthenticationToken, setAuthenticationToken } from '../../utils/authentication'
 import api from '../../utils/api'
 */
-import { actionsGenerator } from '../../store/reducerUtils'
+import { actionsGenerator } from '../../store/reducerUtils';
 
 type MainPageState = {
   loading: boolean,
@@ -18,35 +18,35 @@ const initialState = {
   brands: [],
   groups: [],
   models: [],
-  brandValue: "",
-  groupValue: "",
-  modelValue: "",
-  brandIndex:-1,
-  groupIndex:-1,
-  modelIndex:-1,
+  brandValue: '',
+  groupValue: '',
+  modelValue: '',
+  brandIndex: -1,
+  groupIndex: -1,
+  modelIndex: -1,
   isBrandChecked: false,
   isGroupChecked: false,
   isModelChecked: false,
   count: 0,
-  cars:[],
-  order: "recent",
-  next:"",
-}
+  cars: [],
+  order: 'recent',
+  next: '',
+};
 
 // Action Creators
 
 export const { Types: MainPageTypes, Creators: MainPageActions } = createActions(
   actionsGenerator({
-    getBrandsRequest:[],
-    getModelGroupsRequest:['brandId'],
-    getModelsRequest:['modelGroupId'],
-    getCarAllRequest:['query'],
-    setOrderRequest:['order'],
-    setBrandRequest:['brandValue','brandIndex','isBrandChecked'],
-    setGroupRequest:['groupValue','groupIndex','isGroupChecked'],
-    setModelRequest:['modelValue','modelIndex','isModelChecked'],
+    getBrandsRequest: [],
+    getModelGroupsRequest: ['brandId'],
+    getModelsRequest: ['modelGroupId'],
+    getCarAllRequest: ['query'],
+    setOrderRequest: ['order'],
+    setBrandRequest: ['brandValue', 'brandIndex', 'isBrandChecked'],
+    setGroupRequest: ['groupValue', 'groupIndex', 'isGroupChecked'],
+    setModelRequest: ['modelValue', 'modelIndex', 'isModelChecked'],
   })
-)
+);
 
 // Reducer
 export default function MainPageReducer(state: MainPageState = initialState, action: Object = {}): MainPageState {
@@ -57,7 +57,7 @@ export default function MainPageReducer(state: MainPageState = initialState, act
         loading: true,
       };
     case MainPageTypes.GET_CAR_ALL_SUCCESS:
-      console.log(action.payload,"payload");
+      console.log(action.payload, 'payload');
       return {
         ...state,
         cars: action.payload.results,
@@ -71,19 +71,17 @@ export default function MainPageReducer(state: MainPageState = initialState, act
         loading: true,
       };
     case MainPageTypes.GET_BRANDS_SUCCESS:
-      console.log(action.payload,"payload");
       return {
         ...state,
         brands: action.payload,
         loading: false,
       };
     case MainPageTypes.GET_MODELS_REQUEST:
-    return {
-      ...state,
-      loading: true,
-    };
+      return {
+        ...state,
+        loading: true,
+      };
     case MainPageTypes.GET_MODELS_SUCCESS:
-      console.log(action.payload,"payload");
       return {
         ...state,
         models: action.payload,
@@ -95,7 +93,6 @@ export default function MainPageReducer(state: MainPageState = initialState, act
         loading: true,
       };
     case MainPageTypes.GET_MODEL_GROUPS_SUCCESS:
-      console.log(action.payload,"payload");
       return {
         ...state,
         groups: action.payload,
@@ -113,7 +110,7 @@ export default function MainPageReducer(state: MainPageState = initialState, act
         modelIndex: action.payload.modelIndex,
         isModelChecked: action.payload.isModelChecked,
         loading: false,
-      }
+      };
     case MainPageTypes.SET_GROUP_REQUEST:
       return {
         ...state,
@@ -166,6 +163,6 @@ export default function MainPageReducer(state: MainPageState = initialState, act
       };
 
     default:
-      return state
+      return state;
   }
 }

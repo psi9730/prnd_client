@@ -1,7 +1,6 @@
 {
-  "parser": "babel-eslint",
   "extends": [
-    "airbnb"
+    "airbnb",
   ],
   "plugins": [
     "no-unused-vars-rest"
@@ -44,6 +43,5 @@
     "react/forbid-prop-types": [1, { "forbid": ["any", "array"] }],
     "react/no-unused-prop-types": 0,
     "react/jsx-filename-extension": [2, {"extensions": [".js", ".jsx"]}],
-    "no-unused-vars-rest/no-unused-vars": [2, {"ignoreDestructuredVarsWithRest": true}]
   }
 }

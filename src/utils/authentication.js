@@ -1,22 +1,22 @@
-import AsyncStorage from './Storage'
-import {KEYS} from './Storage'
-const AUTHENTICATION_STORAGE_KEY = 'accessToken'
+import AsyncStorage,{ KEYS }  from './Storage';
+
+const AUTHENTICATION_STORAGE_KEY = 'accessToken';
 
 export function getAuthenticationToken() {
   try {
-    const token = AsyncStorage.get(AUTHENTICATION_STORAGE_KEY)
+    const token = AsyncStorage.get(AUTHENTICATION_STORAGE_KEY);
     if (token) {
-      return token
+      return token;
     }
-    return null
+    return null;
   } catch (e) {
-    return null
+    return null;
   }
 }
 
-export function setAuthenticationToken(token,username) {
-  AsyncStorage.set(KEYS.username,username);
-  return AsyncStorage.set(KEYS.accessToken, token.token)
+export function setAuthenticationToken(token, username) {
+  AsyncStorage.set(KEYS.username, username);
+  return AsyncStorage.set(KEYS.accessToken, token.token);
 }
 
 export function clearAuthenticationToken() {
@@ -26,8 +26,8 @@ export function clearAuthenticationToken() {
 
 export function getUserId() {
   try {
-    return AsyncStorage.get('UserId')
+    return AsyncStorage.get('UserId');
   } catch (e) {
-    return null
+    return null;
   }
 }
