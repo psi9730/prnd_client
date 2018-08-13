@@ -29,9 +29,20 @@ class CarDetailView extends Component<Props, State> {
       error: null,
       activeIndex: 0,
       progress: 0,
+      like:false,
       dateRemain: '',
     };
     autoBind(this);
+  }
+  componentDidMount() {
+    setInterval( () => {
+      this.setState({
+        curTime : new Date()
+      },()=>{
+        const diff = this.getStringDateDiffInDays(this.state.curTime, new Date(this.props.endAt));
+        console.log(diff,'diff');
+        this.setState({dateRemain: diff});console.log(this.state.curTime)})
+    },1000)
   }
   componentWillMount() {
     this.props.getCarRequest(this.props.match.params.id).then(() => {
@@ -46,8 +57,7 @@ class CarDetailView extends Component<Props, State> {
       const now = new Date();
       const endToStart = this.dateDiffInDays(started_at, end_at);
       const nowToStart = this.dateDiffInDays(started_at, now);
-      const diff = this.getStringDateDiffInDays(now, end_at);
-      this.setState({ progress: (nowToStart) / (endToStart) * 100, dateRemain: diff });
+      this.setState({ progress: (nowToStart) / (endToStart) * 100 });
     }).catch((e) => {
       this.setState({ error: 'there is no car on this id' });
     });
@@ -65,7 +75,7 @@ class CarDetailView extends Component<Props, State> {
   }
   getStringDateDiffInDays(a, b) {
     // Discard the time and time-zone information.
-    const date = new Date();
+    var date = new Date();
     date.setTime(b-a);
     return date;
   }
@@ -80,9 +90,9 @@ class CarDetailView extends Component<Props, State> {
               <Container>
                 <Row>
                   <Col sm={9}>
-                    <div className="cntt2">
+                    <div className="cntt2" style={{height: 600}}>
                       <div className="mainImage">
-                        <img src={_.get(_.nth(this.props.images, activeIndex), 'url')} width="100%" height="450" alt={'url'} />
+                        <img src={_.get(_.nth(this.props.images, activeIndex), 'url')} style={{maxWidth:'100%', maxHeight:'480px'}} alt={'url'} />
                           { this.props.status === 'approved' ?
                             <div>
                               <div className="abs2">
@@ -91,6 +101,7 @@ class CarDetailView extends Component<Props, State> {
                               <div className="abs">
                                   <Circle
                                   percent={this.state.progress} style={{ height: 80, width: 80 }} strokeWidth="8"
+                                  trailWidth="6"
                                   strokeColor="#2E7DE1"/>
                               </div>
                               <div className="abs3">
@@ -106,34 +117,56 @@ class CarDetailView extends Component<Props, State> {
                             this.props.status === 'ended' ?
                               <div>
                                 <div className="abs2">
-                                  <img src={require('../../assets/images/yellow-circle.png')} style={{ height: 120, width: 120 }} alt={'url'} />
+                                  <img src={require('../../assets/images/white-circle.png')} style={{ height: 120, width: 120 }} alt={'url'} />
                                 </div>
-                                <span className="abs5">
-                                경매가<br />종료되었습니다.
-                                </span>
+                                <div className="abs">
+                                  <Circle
+                                    percent={this.state.progress} style={{ height: 80, width: 80 }} strokeWidth="8"
+                                    trailWidth="6"
+                                    strokeColor="#29CC91"/>
+                                </div>
+                                <div className="abs3">
+                                  선택대기
+                                </div>
+                                <div className="abs4">
+                                  <Moment format="DD일 h시mm분ss초">
+                                    {this.state.dateRemain}
+                                  </Moment>
+                                </div>
                               </div> :
                               <div>
-                                <div className="abs2">
-                                  <img src={require('../../assets/images/red-circle.png')} style={{ height: 120, width: 120 }} alt={'url'} />
+                                <div className="abs2" style={{ top:25}}>
+                                  <img src={require('../../assets/images/white-circle.png')} style={{height: 110, width: 110 }} alt={'url'} />
                                 </div>
-                                <span className="abs5">
-                                  경매가<br />만료되었습니다.
+                                <div className="abs">
+                                  <Circle
+                                    percent={0} style={{ height: 80, width: 80 }} strokeWidth="8"
+                                    trailWidth="4"
+                                    strokeColor="#2E7DE1"/>
+                                </div>
+                                <span className="abs5" style={{fontSize:15}}>
+                                  유효기간<br />만료
                                 </span>
                               </div>
                           )
                         }
                         </div>
-                        <div className="cntt1" style={{ flexBasis: 'auto', flexGrow: 1, flexShrink: 4, width: '100%' }}>
+                        <div className="cnttt1" style={{ flexBasis: 'auto', flexGrow: 1, flexShrink: 4, width: '100%' }}>
                         {
                           _.map(this.props.images, (image, index) => {
                             return (
                               index === activeIndex ?
-                                <div key={index} className="row1">
-                                  <img style={{ border: '3px solid #2E7DE1' }} src={_.get(image, 'url')} width="60" height="60" alt={_.get(image, 'url')} onClick={() => { this.selectImage(index); }} />
+                                <div key={index} style={{border: '3px solid #2E7DE1', margin:'6px',width: '86px',
+                                  height: '66px',alignItems: 'center' }}>
+                                  <div key={index} className="row1" style={{display: 'flex',margin:0, cursor: 'pointer', justifyContent: 'center', width: '80px',
+                                  height: '60px',alignItems: 'center'}}>
+                                  <img  src={_.get(image, 'url')} style={{maxWidth:'80px', maxHeight:'60px'}} alt={_.get(image, 'url')} onClick={() => { this.selectImage(index); }} />
+                                </div>
                                 </div>
                                 :
-                                <div key={index} className="row1">
-                                  <img src={_.get(image, 'url')} width="60" height="60" alt={_.get(image, 'url')} onClick={() => { this.selectImage(index); }} />
+                                <div key={index} className="row1" style={{  width: '80px',
+                                  height: '60px',display: 'flex',justifyContent: 'center',cursor: 'pointer', alignItems: 'center'}}>
+                                  <img src={_.get(image, 'url')}  style={{maxWidth:'80px', maxHeight:'60px'}}  alt={_.get(image, 'url')} onClick={() => { this.selectImage(index); }} />
                                 </div>
                             );
                           })
@@ -141,54 +174,147 @@ class CarDetailView extends Component<Props, State> {
                       </div>
                     </div>
                   </Col>
-                  <Col sm={3}>
+                  <Col sm={3} style={{backgroundColor: '#FAFAFA'}}>
                     <div className="cntt3">
-                        <div className="cntt5" style={{ flexGrow: 0, flexShrink: 0, flexBasis: 'auto', backgroundColor: '#FFFFFF', marginTop: 10, marginBottom: 10 }}>
-                          <div className="cntt1">
+                      <div className="cntt5" style={{ flexGrow: 0, flexShrink: 0, flexBasis: 'auto', backgroundColor: '#FFFFFF', marginTop: 10, marginBottom: 10 }}>
+                        <div className="cntt1" style={{color: '#ABB9CC'}}>
                           {this.props.carNumber}
                         </div>
-                              <div className="cntt4">
+                        <div className="cntt4" style={{color: '#ABB9CC'}}>
                           {this.props.visitsCount}명 조회
                         </div>
                       </div>
                       <div className="grayLine" />
-                      <div className="cardTitle">
+                      <div className="cardTitle" style={{paddingRight: '15px',
+                        paddingLeft: '15px',
+                        paddingBottom:'2px',
+                        paddingTop: '2px'}}>
                         {this.props.name}
                       </div>
-                      <Moment format="YYYY/MM" style={{ fontSize: 12 }}>
+                      <Moment format="YYYY/MM" style={{paddingRight: '15px',fontSize: '12px',color: '#9093A8',
+                        paddingLeft: '15px',
+                        paddingBottom:'2px',
+                        paddingTop: '2px'}}>
                         {this.props.initialRegistrationDate}
                       </Moment>
-                      <div className="cardText">({this.props.year}년형)</div>
-                      <div className="cardText">{this.props.mileage} km</div>
-                      <div className="cardText">{this.props.fuel} / {this.props.transmission} / {this.props.color}</div>
-                      <div className="cardText" style={{ marginBottom: 20 }}>{this.props.location}</div>
+                      <div className="cardText" style={{paddingRight: '15px',color: '#9093A8',
+                        paddingLeft: '15px',
+                        paddingBottom:'2px',
+                        paddingTop: '2px'}}>({this.props.year}년형)</div>
+                      <div className="cardText" style={{paddingRight: '15px',color: '#9093A8',
+                        paddingLeft: '15px',
+                        paddingBottom:'2px',
+                        paddingTop: '2px'}}>{this.props.mileage} km</div>
+                      <div className="cardText" style={{paddingRight: '15px',color: '#9093A8',
+                        paddingLeft: '15px',
+                        paddingBottom:'2px',
+                        paddingTop: '2px'}}>{this.props.fuel} / {this.props.transmission} / {this.props.color}</div>
+                      <div className="cardText"style={{paddingRight: '15px',marginBottom: 20,color: '#9093A8',
+                        paddingLeft: '15px',
+                        paddingBottom:'2px',
+                        paddingTop: '2px'}}>{this.props.location}</div>
                       <div className="grayLine" />
-                      <div className="cntt5" style={{ flexGrow: 0, flexShrink: 0, flexBasis: 'auto', backgroundColor: '#FFFFFF', marginTop: 10, marginBottom: 10 }}>
-                        <div className="cntt1">
-                          <div className="cntt2">
-                            <div>내 견적</div>
-                            {_.get(this.props.myBid, 'price') ?
-                              <div style={{ color: '#2E7DE1' }}>{_.get(this.props.myBid, 'price')}만원</div> :
-                              <div style={{ color: '#2E7DE1' }}>0만원</div>
-                            }
+                      {this.props.status === 'approved' ?
+                        <div className="cntt5" style={{
+                          flexGrow: 0,
+                          flexShrink: 0,
+                          flexBasis: 'auto',
+                          backgroundColor: '#FFFFFF',
+                          marginTop: 10,
+                          marginBottom: 10
+                        }}>
+                          <div className="cntt1"
+                               style={{flexBasis: 'auto', flexGrow: 0, alignSelf: 'center', flexShrink: 0}}>
+                            <div className="cnttt2">
+                              {_.get(this.props.myBid, 'price') ?
+                                (<div>
+                                  <span style={{color: '#FFFFFF', fontSize: '15px'}}>내 견적</span>
+                                  <div
+                                    style={{color: '#679CFF', fontSize: '12px'}}>{_.get(this.props.myBid, 'price')}만원
+                                  </div>
+                                </div>) :
+                                <div style={{color: '#679CFF', paddingLeft: '6px'}}>
+                                  {
+                                    this.state.like ?
+                                      <img src={require('../../assets/images/like.png')}
+                                           onClick={() => this.setState({like: !this.state.like})}
+                                           style={{height: 20, width: 20, cursor: 'pointer'}} alt={'url'}/> :
+                                      <img src={require('../../assets/images/like1.png')}
+                                           onClick={() => this.setState({like: !this.state.like})}
+                                           style={{height: 20, width: 20, cursor: 'pointer'}} alt={'url'}/>
+                                  }
+                                </div>
+                              }
                             </div>
+                          </div>
+                          <div className="cnttt4" style={{flexBasis: 'auto', flexGrow: 1, flexShrink: 0}}>
+                            <Button className="btt11" style={{
+                              backgroundColor: '#679CFF',
+                              height: '40px',
+                              paddingRight: '20px',
+                              paddingLeft: '20px',
+                              paddingTop: '3px',
+                              paddingBottom: '3px',
+                              borderWidth: 0
+                            }}>{
+                              _.get(this.props.myBid, 'price') ?
+                                <span style={{color: '#FFFFFF', fontSize: '15px'}}>매입견적 수정</span> :
+                                <span style={{color: '#FFFFFF', fontSize: '15px'}}>매입견적 놓기</span>
+                            }
+                            </Button>
+                          </div>
                         </div>
-                        <div className="cntt4">
-                          <Button className="btt11" style={{ backgroundColor: '#2E7DE1', borderWidth: 0 }} >{
-                            <span style={{ color: '#FFFFFF' }}>매입견적 수정</span>
-                          }
-                          </Button>
+                        :
+                        <div className="cntt5" style={{
+                          flexGrow: 0,
+                          flexShrink: 0,
+                          flexDirection: 'column',
+                          flexBasis: 'auto',
+                          backgroundColor: '#FFFFFF',
+                          marginTop: 10,
+                          marginBottom: 10
+                        }}>
+                          <div style={{paddingBottom: '15px'}}>
+                            <span style={{color: '#679CFF'}}>{this.props.bidsCount}</span><span>명 참여 경매결과</span>
+                          </div>
+                          <div className="cntt4" style={{flexBasis: 'auto', flexGrow: 1, flexShrink: 0}}>
+                           <div className="cnttt2">
+                             <div  className="priceText">
+                               선택가
+                             </div>
+                             {this.props.selectedBid ? <div className="priceText">
+                               {_.get(this.props.selectedBid, 'price')}
+                             </div> : <div className="priceText"> - </div>
+                             }
+                           </div>
+                            <div className="cnttt2">
+                              <div  className="priceText">
+                                최고가
+                              </div>
+                              {this.props.highestBid ? <div  className="priceText">
+                                {_.get(this.props.highestBid, 'price')}
+                              </div> : <div  className="priceText"> - </div>
+                              }
+                            </div>
+                            <div className="cnttt2">
+                              <div  className="priceText">
+                                내견적
+                              </div>
+                              {this.props.myBid ? <div  className="priceText">
+                                {_.get(this.props.myBid, 'price')}
+                              </div> : <div  className="priceText"> - </div>
+                              }
+                            </div>
+                          </div>
                         </div>
-                      </div>
+                      }
                     </div>
-                    <div>
-                      <div className="cntt5" style={{ flexGrow: 0, flexShrink: 0, flexBasis: 'auto', backgroundColor: '#FFFFFF', marginTop: 10, marginBottom: 10 }}>
-                        <div className="cntt1" style={{ fontSize: 12 }}>
+                    <div className="cntt5" style={{ flexGrow: 0, flexShrink: 0, flexBasis: 'auto', backgroundColor: '#FAFAFA', marginTop: 10, marginBottom: 10 }}>
+                      <div className="cntt1" style={{ flex:1, fontSize: 12, backgroundColor: '#FAFAFA'}}>
                     차량정보가 잘못되었나요?
-                        </div>
-                        <div className="cntt4" style={{ color: '#2E7DE1', fontSize: 12 }}>
+                      </div>
+                      <div className="cntt4" style={{ flexBasis:'auto', flexGrow:0, flexShrink:0, color: '#679CFF', fontSize: 12, backgroundColor: '#FAFAFA',  textDecoration: 'underline'}}>
                     신고하기
-                        </div>
                       </div>
                     </div>
                   </Col>

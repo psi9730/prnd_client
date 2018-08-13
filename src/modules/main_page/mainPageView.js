@@ -5,9 +5,9 @@ import autoBind from 'react-autobind';
 import qs from 'qs';
 import { Circle } from 'rc-progress';
 import Moment from 'react-moment';
+import Select from 'react-select';
 import './cardView.css';
 import Navigator from '../top_navigator/navigatorContainer';
-import Select from 'react-select';
 
 type Props = {
   brands: any,
@@ -36,6 +36,26 @@ type State = {
   password: string,
   secure: boolean,
 };
+const customStyles = {
+  option: (base, state) => ({
+    ...base,
+    borderBottom: '1px dotted pink',
+    color: state.isFullscreen ? 'red' : 'blue',
+    padding: 20,
+    cursor:'pointer',
+  }),
+  control: () => ({
+    // none of react-selects styles are passed to <View />
+    width: 200,
+    cursor:'pointer',
+  }),
+  singleValue: (base, state) => {
+    const opacity = state.isDisabled ? 0.5 : 1;
+    const transition = 'opacity 300ms';
+
+    return { ...base, opacity, transition };
+  }
+}
 
 const _MS_PER_DAY = 1000 * 60 * 60 * 24;
 const options = [
@@ -167,7 +187,7 @@ class MainPageView extends Component<Props, State> {
     const target = event.target;
     const value = target.value;
     const index = target.name;
-    if(this.props.isGroupChecked && this.props.groupValue===value){
+    if(this.props.isGroupChecked && this.props.groupValue.toString()===value.toString()){
       this.props.setGroupRequest(null,-1,false).then(()=>this.props.setModelRequest(null,-1,false)).then(()=>this.getCarsRequest()).catch((e)=>console.log(e))
     }
     else{
@@ -180,7 +200,7 @@ class MainPageView extends Component<Props, State> {
     const target = event.target;
     const value = target.value;
     const index = target.name;
-    if(this.props.isModelChecked && this.props.modelValue===value){
+    if(this.props.isModelChecked && this.props.modelValue.toString()===value.toString()){
       this.props.setModelRequest(null,-1,false).then(()=>this.getCarsRequest()).catch((e)=>console.log(e))
     }
     else{
@@ -195,7 +215,7 @@ class MainPageView extends Component<Props, State> {
     const target = event.target;
     const value = target.value;
     const index = target.name;
-    if(this.props.isBrandChecked && this.props.brandValue===value){
+    if(this.props.isBrandChecked && this.props.brandValue.toString()===value.toString()){
       this.props.setBrandRequest(null,-1,false).then(()=>this.props.setGroupRequest(null,-1,false)).then(()=>this.props.setModelRequest(null,-1,false)).then(()=>this.getCarsRequest()).catch((e)=>console.log(e))
     }
     else{
@@ -222,37 +242,37 @@ class MainPageView extends Component<Props, State> {
           <img className="scroll" onClick={()=>this.goToTop()} src={require('../../assets/images/go_up.png')} alt="Card image cap"/>
           <Container>
             <div className="navLeft">
-              <Button className="btt1" style={{backgroundColor: 'white', borderWidth:0}} onClick={() => this.goToBargain()}>
+              <Button className="btt1" style={{backgroundColor: 'white', borderWidth:0,paddingBottom:0}} onClick={() => this.goToBargain()}>
                 {
                   this.state.selectedOption2 === '일반' ?
                     <div className="bttStyle1">
-                      <span style={{ color: '#2E7DE1' }}>일반</span>
+                      <span style={{ color: '#2E7DE1', marginBottom: '15px' }}>일반</span>
                       <span className='bottomLine'/>
                     </div>:
                     <div className="bttStyle1">
-                      <span style={{ color: 'gray' }}>일반</span>
+                      <span style={{ color: 'gray' , marginBottom: '15px'}}>일반</span>
                     </div>
                 }
               </Button>
               <Button className="btt1"  style={{backgroundColor: 'white', borderWidth:0}} onClick={() => this.goToBargain()}>{
                 this.state.selectedOption2 === '공매' ?
                   <div className="bttStyle1">
-                    <span style={{ color: '#2E7DE1' }}>공매</span>
+                    <span style={{ color: '#2E7DE1', marginBottom: '15px'}}>공매</span>
                     <span className='bottomLine'/>
                   </div>:
                   <div className="bttStyle1">
-                    <span style={{ color: 'gray' }}>공매</span>
+                    <span style={{ color: 'gray' , marginBottom: '15px'}}>공매</span>
                   </div>
               }
               </Button>
               <Button className="btt1"  style={{backgroundColor: 'white', borderWidth:0}} onClick={() => this.goToBargain()}>{
                 this.state.selectedOption2 === '찜' ?
                   <div className="bttStyle1">
-                    <span style={{ color: '#2E7DE1' }}>찜</span>
-                    <span className='bottomLine'/>
+                    <span style={{ color: '#2E7DE1', marginBottom: '15px'}}>찜</span>
+              <span className='bottomLine'/>
                   </div>:
                   <div className="bttStyle1">
-                    <span style={{ color: 'gray' }}>찜</span>
+                    <span style={{ color: 'gray', marginBottom: '15px'}}>찜</span>
                   </div>
               }
               </Button>
@@ -260,8 +280,8 @@ class MainPageView extends Component<Props, State> {
           </Container>
       <Container className="cnt1">
         <Row>
-          <Col className="cnt3" xs="auto">
-            <form style={{backgroundColor: 'C9D5E1', padding:10}}>
+          <Col sm="3" className="cnt3" xs="auto">
+            <form  className="cnt9" style={{backgroundColor: 'white', maxWidth:'100%', width:'auto', margin:10, marginTop:30, borderWidth:0}}>
               <div className='title'>
                 브랜드/등급/모델
               </div>
@@ -271,11 +291,13 @@ class MainPageView extends Component<Props, State> {
                   return(
                     <div key={brandIndex}>
                       <div className='brand'>
-                        <div className="input">
+                        <div className="input" style={{borderRadius: '8px'}}>
                           <input
                             name={brandIndex}
                             value={brand.id}
                             type="checkbox"
+                            style={{ cursor:'pointer' }}
+                            className="checkbox"
                             checked={this.props.brandIndex.toString()===brandIndex.toString()}
                             onChange={this.handleBrandChange}
                           />
@@ -298,6 +320,7 @@ class MainPageView extends Component<Props, State> {
                                     name={groupIndex}
                                     value={group.id}
                                     type="checkbox"
+                                    style={{cursor: 'pointer' }}
                                     checked={this.props.groupIndex.toString()===groupIndex.toString()}
                                     onChange={this.handleGroupChange} />
                                 </div>
@@ -319,6 +342,7 @@ class MainPageView extends Component<Props, State> {
                                             name={modelIndex}
                                             value={model.id}
                                             type="checkbox"
+                                            style={{cursor: 'pointer' }}
                                             checked={this.props.modelIndex.toString()===modelIndex.toString()}
                                             onChange={this.handleModelChange} />
                                         </div>
@@ -341,22 +365,23 @@ class MainPageView extends Component<Props, State> {
               }
             </form>
           </Col>
-          <Col className="cnt4">
+          <Col  sm="9" className="cnt4">
             <Row>
-                <div className="cnt5" style={{padding:30}}>
+                <div className="cnt5" style={{padding:20}}>
                   <div className="cnt8">
                     <div>차량 {this.props.count}대</div>
                     <div>
-                      <img className="img2"onClick={()=>this.getCarsRequest()} src={require('../../assets/images/refresh.png')} alt="Card image cap"/>
+                      <img className="img2" style={{alignSelf: 'center',  cursor:'pointer'}} onClick={()=>this.getCarsRequest()} src={require('../../assets/images/refresh-1.png')} alt="Card image cap"/>
                     </div>
                   </div>
                   <div className="cnt7">
-                    <div style={{flexBasis: 200, flexGrow:0, flexShrink:0}}>
+                    <div style={{flexBasis: 200, flexGrow:0, cursor:'pointer', flexShrink:0}}>
                       <Select
                         value={this.props.selectedOption}
                         onChange={this.handleChange}
                         placeholder={this.parseOrder(this.props.order)}
                         options={options}
+                        style={customStyles}
                       />
                     </div>
                   </div>
@@ -373,13 +398,13 @@ class MainPageView extends Component<Props, State> {
                     return (
                       <Col sm="3" xs="12" className="card1" key={index}>
                         <div className="card3">
-                          <div>
-                            {_.get(listValue,['detail','main_image']) ? <img className="img1" style={{marginTop:0}} onClick={()=>this.goToDetail(listValue.id)} src={listValue.detail.main_image.url} alt="Card image cap"/> : <img className="img1" style={{marginTop:0}} onClick={()=>this.goToDetail(listValue.id)} src={require('../../assets/images/car.jpeg')} alt="Card image cap"/> }
+                          <div style={{backgroundColor: 'black', height: 200, display: 'flex', cursor:'pointer', justifyContent:'center', alignItems:'center'}}>
+                            {_.get(listValue,['detail','main_image']) ? <img className="img1" style={{marginTop:0, cursor: 'pointer', maxHeight: '100%', height: 'auto', width: 'auto',maxWidth: '100%'}} onClick={()=>this.goToDetail(listValue.id)} src={listValue.detail.main_image.url} alt="Card image cap"/> : <img className="img1" style={{marginTop:0, maxHeight: '100%', maxWidth: '100%'}} onClick={()=>this.goToDetail(listValue.id)} src={require('../../assets/images/car.jpeg')} alt="Card image cap"/> }
                           </div>
                           <div className="card4">
-                            <div className="cardTitle">
-                              {listValue.detail.name}
-                            </div>
+                            <div className="cardTitle1">
+                            {listValue.detail.name}
+                          </div>
                             <div className="cnt5">
                               <div className="cnt2">
                                 <Moment format="YYYY/MM" style={{fontSize:12}}>
@@ -390,7 +415,7 @@ class MainPageView extends Component<Props, State> {
                                 <div className="cardText">{listValue.detail.location}</div>
                               </div>
                               <div className='center2'>
-                                <Circle percent={progress} style={{height: 40, width: 40}} strokeWidth="8"
+                                <Circle percent={progress} style={{height: 40, width: 40}} strokeWidth="8"  trailWidth="6"
                                         strokeColor="#2E7DE1"/>
                                 <div className='abs6'>
                                   {listValue.auction.bids_count}

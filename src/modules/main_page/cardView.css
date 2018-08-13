@@ -9,7 +9,7 @@
   border: none;
 }
 .card1{
-  background-color: #DFFCFF;
+  background-color: #FAFAFA;
 }
 .card2{
   margin: 40px;
@@ -18,6 +18,8 @@
   margin-top:10px;
   background-color: #FFFFFF;
   display: flex;
+  flex:1;
+  height:400px;
   flex-direction: column;
 }
 .card4{
@@ -27,20 +29,18 @@
   flex-direction: column;
 }
 .cnt1{
-  background-color: #DFFCFF;
+  background-color: #FAFAFA;
 }
 .cnt2{
   display: flex;
   flex-direction: column;
 }
 .cnt3{
-  display: flex;
-  flex-direction: row;
-  overflow: scroll;
-  height: 500px;
+  height: 300px;
+
 }
 .cnt4{
-  background-color: #DFFCFF;
+  background-color:#FAFAFA;
 }
 .cnt5{
   flex:1;
@@ -60,7 +60,7 @@
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  background-color:  #DFFCFF;
+  background-color:  #FAFAFA;
   align-items: center;
 }
 .cnt8{
@@ -68,13 +68,21 @@
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  background-color:  #DFFCFF;
+  background-color:  #FAFAFA;
   align-items: center;
+}
+.cnt9{
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+  height: 300px;
+
 }
 .btt1{
   color: white;
   background-color: white;
   width: 60px;
+  padding-bottom:0;
   border-width: 4px;
 }
 .abs6{
@@ -88,7 +96,8 @@
 .title{
   color: gray;
   font-size: 15px;
-  margin: 15px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 .bttStyle1{
   display: flex;
@@ -105,38 +114,50 @@
 }
 .grayLine{
   height: 1px;
-  background-color: gray;
+  width:100%;
+  background-color: #FAFAFA;
+  border-width: 0;
 }
 .text1{
-  font-size:15px;
+  font-size:11px;
   text-align: center;
 }
 .input{
+  position: relative;
   padding-bottom:2px;
 }
 .text2{
   margin-left:5px;
-  font-size:10px;
+  font-size:9px;
   text-align: center;
   color: #32a8ff;
 }
+.checkbox{
+}
+
 .model{
-  margin-left:21px;
+  margin-left:30px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  margin-top:4px;
+  margin-bottom:4px;
 }
 .group{
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  margin-left: 12px;
+  margin-left: 15px;
+  margin-top:4px;
+  margin-bottom:4px;
 }
 .brand{
   display: flex;
+  margin-top:4px;
+  margin-bottom:4px;
+  margin-left: 3px;
   justify-content: flex-start;
   align-items: center;
-  margin-left:3px;
 }
 .center{
   margin-left:5px;
@@ -161,8 +182,8 @@
   margin-top: 4px;
   background-color: transparent;
 }
-.cardTitle{
-  height:50px;
+.cardTitle1{
+  height:80px;
   font-weight: bold;
   font-size: 16px;
   margin-top: 4px;
@@ -175,17 +196,23 @@
   height:200px;
   background-color: transparent;
 }
+
 .img2{
   margin: 0;
-  width: 20px;
+  width: 23px;
   height:20px;
   background-color: transparent;
+}
+.img3{
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+  background-color: #2E7DE1;
 }
 .navLeft{
   display: flex;
   width: 80%;
   margin-Top: 15px;
-  margin-bottom: 5px;
   justify-content: flex-start;
   align-self: center;
   color: white;

@@ -24,6 +24,8 @@ export default withRouter(connect(
     myBid: _.get(state, ['cars', 'myBid']),
     bidsCount: _.get(state, ['cars', 'bidsCount']),
     visitsCount: _.get(state, ['cars', 'visitsCount']),
+    selectedBid: _.get(state, ['cars', 'selectedBid']),
+    highestBid: _.get(state,['cars','highestbid']),
 
   }),
   actions,

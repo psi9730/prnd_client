@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import './scroll.css'
+import './scroll.css';
+
 class ScrollButton extends React.Component {
   constructor() {
     super();
 
     this.state = {
-      intervalId: 0
+      intervalId: 0,
     };
   }
 
@@ -17,17 +18,19 @@ class ScrollButton extends React.Component {
   }
 
   scrollToTop() {
-    let intervalId = setInterval(this.scrollStep.bind(this), this.props.delayInMs);
-    this.setState({ intervalId: intervalId });
+    const intervalId = setInterval(this.scrollStep.bind(this), this.props.delayInMs);
+    this.setState({ intervalId });
   }
 
-  render () {
-    return <button title='Back to top' className='scroll'
-                   onClick={ () => { this.scrollToTop(); }}>
-      <span className='arrow-up glyphicon glyphicon-chevron-up'>
-         <img style={{height: 30, width: 30}} src={require('../../assets/images/go_up.png')} alt="Card image cap"/>
+  render() {
+    return (<button
+      title="Back to top" className="scroll"
+      onClick={() => { this.scrollToTop(); }}
+    >
+      <span className="arrow-up glyphicon glyphicon-chevron-up">
+        <img style={{ height: 30, width: 30 }} src={require('../../assets/images/go_up.png')} alt="Card image cap" />
       </span>
-    </button>;
+    </button>);
   }
 }
 
