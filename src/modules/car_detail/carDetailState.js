@@ -64,6 +64,8 @@ export default function CarDetailReducer(state: CarDetailState = initialState, a
         images: action.payload.detail.images,
         mainImage: action.payload.detail.main_image,
         startedAt: action.payload.auction.started_at,
+        highestBid: action.payload.auction.highest_bid,
+        selectedBid: action.payload.auction.selected_bid,
         endAt: action.payload.auction.end_at,
         status: action.payload.auction.status,
         myBid: action.payload.auction.my_bid,

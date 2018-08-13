@@ -86,7 +86,6 @@
     "webpack-dev-server": "^2.3.0",
     "webpack-md5-hash": "^0.0.5"
   },
-
   "dependencies": {
     "axios": "^0.18.0",
     "babel-polyfill": "^6.20.0",
@@ -133,6 +132,7 @@
     "redux-saga": "^0.16.0",
     "redux-thunk": "^2.2.0",
     "redux-wait-for-action": "^0.0.7",
+    "rn-round-checkbox": "^0.3.4",
     "styled-components": "^1.4.6",
     "styled-theme": "^0.3.0",
     "styled-tools": "^0.1.2",

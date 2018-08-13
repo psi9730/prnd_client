@@ -1,5 +1,5 @@
 .imglogo1{
-  margin-left: 5px;
+
 }
 
 .btt11{
@@ -11,7 +11,7 @@
   margin-top:5px;
 }
 .Navi1{
-  background-color: #2E7DE1;
+  background-color: #424C6B;
 }
 .inp2{
   color: white;
@@ -24,14 +24,15 @@
   height:30px;
   margin-top:5px;
 }
-.navLeft{
+.navLeft1{
   display: flex;
   justify-content: flex-start;
+  align-items: center;
 }
 
 .btt11{
-  background-color: #2E7DE1;
-  color: #2E7DE1;
+  background-color: #424C6B;
+  color: #424C6B;
   border-width: 0;
   margin-top:2px;
 }
@@ -39,6 +40,6 @@
 .btt12{
   border:none;
   background-color:white;
-  margin-left:-8px;
+  margin-left:-20px;
   margin-top:2px;
 }

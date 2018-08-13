@@ -11,38 +11,69 @@
 }
 .mainImage{
   position: relative;
+  background-size: cover;
   flex-basis: auto;
   flex-grow: 4;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   flex-shrink: 1;
   margin:12px;
 }
-.cntt1{
+.cnttt1{
   flex:1;
+  padding-left:5px;
+  overflow: scroll;
   display: flex;
   background-color: #FFFFFF;
   flex-direction: row;
   justify-content: flex-start;
 }
+.cntt1{
+   flex:1;
+   display: flex;
+   background-color: #FFFFFF;
+   flex-direction: row;
+   justify-content: flex-start;
+ }
 .cntt2{
+  display: flex;
+  flex-direction: column;
+  box-shadow: 2px 3px 1px rgba(0,0,0,0.1), 2px 3px 1px rgba(0,0,0,0.1)
+}
+.cnttt2{
   display: flex;
   flex-direction: column;
 }
 .cntt3{
   flex:1;
   display: flex;
-  padding:15px;
+  background-color: #FFFFFF;
+  margin-top:5px;
   flex-direction: column;
   justify-content: flex-start;
-  box-shadow: 3px 3px darkgray;
+  box-shadow: 2px 3px 1px rgba(0,0,0,0.1), 2px 3px 1px rgba(0,0,0,0.1)
 }
 .cntt4{
    flex:1;
    display: flex;
    background-color: #FFFFFF;
    flex-direction: row;
-   justify-content: flex-end;
+   justify-content: space-between;
+}
+.cnttt4{
+  flex:1;
+  display: flex;
+  background-color: #FFFFFF;
+  flex-direction: row;
+  justify-content:flex-end;
 }
 .cntt5{
+  padding-right: 12px;
+  padding-left: 12px;
+  padding-bottom:5px;
+  padding-top:5px;
   display: flex;
   flex-direction: row;
 }
@@ -50,6 +81,8 @@
   color: #2E7DE1;
 }
 .row1{
+  background-size: contain;
+  background: black;
   margin: 6px;
 }
 .row2{
@@ -70,6 +103,11 @@
   font-size: 12px;
   margin-top: 4px;
   background-color: transparent;
+}
+.priceText{
+  font-size:12px;
+  color: #424C6B;
+  align-self: flex-start;
 }
 .cardTitle{
   height:50px;
@@ -120,9 +158,19 @@
   position: absolute;
   text-align: center;
   width: 80px;
-  color: #FFFFFF;
+  color: gray;
   height: 40px;
   font-size:12px;
   top:  60px;
+  right: 38px;
+}
+.abs7 {
+  position: absolute;
+  text-align: center;
+  width: 80px;
+  color: white;
+  height: 40px;
+  font-size:12px;
+  bottom:12px;
   right: 38px;
 }
