@@ -19,7 +19,10 @@
   justify-content: center;
   align-items: center;
   flex-shrink: 1;
-  margin:12px;
+  margin-top:12px;
+  margin-left:12px;
+  margin-right:12px;
+  margin-bottom:3px;
 }
 .cnttt1{
   flex:1;
@@ -69,6 +72,14 @@
   flex-direction: row;
   justify-content:flex-end;
 }
+.cnttt4_1{
+  flex:1;
+  display: flex;
+  background-color: #FFFFFF;
+  flex-direction: row;
+  justify-content:center;
+  align-self:flex-start;
+}
 .cntt5{
   padding-right: 12px;
   padding-left: 12px;
@@ -102,6 +113,7 @@
 .cardText{
   font-size: 12px;
   margin-top: 4px;
+  color: #9093A8;
   background-color: transparent;
 }
 .priceText{
@@ -129,10 +141,10 @@
 .abs2{
   position: absolute;
   text-align: center;
-  width: 120px;
-  height: 120px;
-  right: 20px;
-  top: 20px;
+  width: 110px;
+  height: 110px;
+  right: 25px;
+  top: 25px;
 }
 .abs3 {
   position: absolute;

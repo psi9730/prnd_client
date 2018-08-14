@@ -96,7 +96,7 @@ class CarDetailView extends Component<Props, State> {
                           { this.props.status === 'approved' ?
                             <div>
                               <div className="abs2">
-                                <img src={require('../../assets/images/white-circle.png')} style={{ height: 120, width: 120 }} alt={'url'} />
+                                <img src={require('../../assets/images/white-circle.png')} style={{ height: 110, width: 110 }} alt={'url'} />
                               </div>
                               <div className="abs">
                                   <Circle
@@ -117,7 +117,7 @@ class CarDetailView extends Component<Props, State> {
                             this.props.status === 'ended' ?
                               <div>
                                 <div className="abs2">
-                                  <img src={require('../../assets/images/white-circle.png')} style={{ height: 120, width: 120 }} alt={'url'} />
+                                  <img src={require('../../assets/images/white-circle.png')} style={{ height: 110, width: 110 }} alt={'url'} />
                                 </div>
                                 <div className="abs">
                                   <Circle
@@ -180,7 +180,7 @@ class CarDetailView extends Component<Props, State> {
                         <div className="cntt1" style={{color: '#ABB9CC'}}>
                           {this.props.carNumber}
                         </div>
-                        <div className="cntt4" style={{color: '#ABB9CC'}}>
+                        <div className="cnttt4" style={{color: '#ABB9CC'}}>
                           {this.props.visitsCount}명 조회
                         </div>
                       </div>
@@ -191,16 +191,17 @@ class CarDetailView extends Component<Props, State> {
                         paddingTop: '2px'}}>
                         {this.props.name}
                       </div>
-                      <Moment format="YYYY/MM" style={{paddingRight: '15px',fontSize: '12px',color: '#9093A8',
+                      <div className="cnttt4_1" style={{paddingRight: '15px',color: '#9093A8',
                         paddingLeft: '15px',
                         paddingBottom:'2px',
                         paddingTop: '2px'}}>
-                        {this.props.initialRegistrationDate}
-                      </Moment>
-                      <div className="cardText" style={{paddingRight: '15px',color: '#9093A8',
-                        paddingLeft: '15px',
-                        paddingBottom:'2px',
-                        paddingTop: '2px'}}>({this.props.year}년형)</div>
+                        <Moment format="YYYY/MM" style={{fontSize:'12px',marginTop:0}}>
+                          {this.props.initialRegistrationDate}
+                        </Moment>
+                        <div style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
+                          <div style={{marginLeft:'5px',fontSize:'12px',  textAlign: 'center'}}>({this.props.year}년형)</div>
+                        </div>
+                      </div>
                       <div className="cardText" style={{paddingRight: '15px',color: '#9093A8',
                         paddingLeft: '15px',
                         paddingBottom:'2px',
@@ -228,7 +229,7 @@ class CarDetailView extends Component<Props, State> {
                             <div className="cnttt2">
                               {_.get(this.props.myBid, 'price') ?
                                 (<div>
-                                  <span style={{color: '#FFFFFF', fontSize: '15px'}}>내 견적</span>
+                                  <span style={{color: '#9093A8', fontSize: '12px'}}>내 견적</span>
                                   <div
                                     style={{color: '#679CFF', fontSize: '12px'}}>{_.get(this.props.myBid, 'price')}만원
                                   </div>
@@ -247,10 +248,10 @@ class CarDetailView extends Component<Props, State> {
                               }
                             </div>
                           </div>
-                          <div className="cnttt4" style={{flexBasis: 'auto', flexGrow: 1, flexShrink: 0}}>
+                          <div className="cnttt4" style={{flexBasis: 'auto', flexGrow: 1, flexShrink: 0,display:'flex',alignItems:'center'}}>
                             <Button className="btt11" style={{
                               backgroundColor: '#679CFF',
-                              height: '40px',
+                              height: '30px',
                               paddingRight: '20px',
                               paddingLeft: '20px',
                               paddingTop: '3px',
@@ -258,8 +259,8 @@ class CarDetailView extends Component<Props, State> {
                               borderWidth: 0
                             }}>{
                               _.get(this.props.myBid, 'price') ?
-                                <span style={{color: '#FFFFFF', fontSize: '15px'}}>매입견적 수정</span> :
-                                <span style={{color: '#FFFFFF', fontSize: '15px'}}>매입견적 놓기</span>
+                                <span style={{color: '#FFFFFF', fontSize: '12px'}}>매입견적 수정</span> :
+                                <span style={{color: '#FFFFFF', fontSize: '12px'}}>매입견적 놓기</span>
                             }
                             </Button>
                           </div>

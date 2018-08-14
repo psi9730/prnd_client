@@ -2,24 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cddba2f0-06a3-4906-beb1-456af59b0e68" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/components/templates/CheckBox.js" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
-      <change beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/logout.png" afterPath="$PROJECT_DIR$/src/assets/images/logout.png" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/prnd-icon.png" afterPath="$PROJECT_DIR$/src/assets/images/prnd-icon.png" />
-      <change beforePath="$PROJECT_DIR$/src/components/templates/ScrollToTop.js" afterPath="$PROJECT_DIR$/src/components/templates/ScrollToTop.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/templates/scroll.css" afterPath="$PROJECT_DIR$/src/components/templates/scroll.css" />
-      <change beforePath="$PROJECT_DIR$/src/constants/constants.js" afterPath="$PROJECT_DIR$/src/constants/constants.js" />
-      <change beforePath="$PROJECT_DIR$/src/modules/car_detail/carDetailState.js" afterPath="$PROJECT_DIR$/src/modules/car_detail/carDetailState.js" />
       <change beforePath="$PROJECT_DIR$/src/modules/car_detail/carDetailView.css" afterPath="$PROJECT_DIR$/src/modules/car_detail/carDetailView.css" />
       <change beforePath="$PROJECT_DIR$/src/modules/car_detail/carDetailView.js" afterPath="$PROJECT_DIR$/src/modules/car_detail/carDetailView.js" />
-      <change beforePath="$PROJECT_DIR$/src/modules/car_detail/carDetailViewContainer.js" afterPath="$PROJECT_DIR$/src/modules/car_detail/carDetailViewContainer.js" />
       <change beforePath="$PROJECT_DIR$/src/modules/main_page/cardView.css" afterPath="$PROJECT_DIR$/src/modules/main_page/cardView.css" />
       <change beforePath="$PROJECT_DIR$/src/modules/main_page/mainPageView.js" afterPath="$PROJECT_DIR$/src/modules/main_page/mainPageView.js" />
-      <change beforePath="$PROJECT_DIR$/src/modules/top_navigator/navigator.css" afterPath="$PROJECT_DIR$/src/modules/top_navigator/navigator.css" />
-      <change beforePath="$PROJECT_DIR$/src/modules/top_navigator/navigator.js" afterPath="$PROJECT_DIR$/src/modules/top_navigator/navigator.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -36,14 +23,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="mainPageView.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/modules/main_page/mainPageView.js">
+      <file leaf-file-name="carDetailView.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/modules/car_detail/carDetailView.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="271">
-              <caret line="317" column="55" lean-forward="true" selection-start-line="317" selection-start-column="55" selection-end-line="317" selection-end-column="55" />
+            <state relative-caret-position="425">
+              <caret line="204" column="77" lean-forward="true" selection-start-line="204" selection-start-column="77" selection-end-line="204" selection-end-column="93" />
               <folding>
-                <element signature="e#9#50#0" expanded="true" />
+                <marker date="1534212385366" expanded="true" signature="3372:3422" ph="&lt;div/&gt;" />
+                <marker date="1534212385366" expanded="true" signature="16290:16314" ph="&lt;Col/&gt;" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mainPageSaga.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/modules/main_page/mainPageSaga.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="48">
+              <caret line="7" column="31" lean-forward="false" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -51,8 +49,8 @@
       <file leaf-file-name="carDetailView.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/modules/car_detail/carDetailView.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="496">
-              <caret line="31" column="1" lean-forward="true" selection-start-line="31" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
+            <state relative-caret-position="472">
+              <caret line="58" column="1" lean-forward="false" selection-start-line="58" selection-start-column="1" selection-end-line="58" selection-end-column="70" />
               <folding />
             </state>
           </provider>
@@ -68,11 +66,33 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="mainPageView.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/modules/main_page/mainPageView.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="415" column="31" lean-forward="false" selection-start-line="415" selection-start-column="31" selection-end-line="420" selection-end-column="38" />
+              <folding>
+                <element signature="e#9#50#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="carDetailState.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/modules/car_detail/carDetailState.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="462">
+              <caret line="64" column="52" lean-forward="true" selection-start-line="64" selection-start-column="52" selection-end-line="64" selection-end-column="52" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="navigator.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/modules/top_navigator/navigator.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="592">
-              <caret line="37" column="1" lean-forward="true" selection-start-line="37" selection-start-column="1" selection-end-line="37" selection-end-column="1" />
+              <caret line="37" column="1" lean-forward="false" selection-start-line="37" selection-start-column="1" selection-end-line="37" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -88,28 +108,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="loginView.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/modules/login/loginView.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="416">
-              <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CheckBox.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/templates/CheckBox.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="25" column="11" lean-forward="false" selection-start-line="25" selection-start-column="10" selection-end-line="25" selection-end-column="11" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="scroll.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/templates/scroll.css">
           <provider selected="true" editor-type-id="text-editor">
@@ -120,21 +118,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mainPageState.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/modules/main_page/mainPageState.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="496">
-              <caret line="31" column="18" lean-forward="false" selection-start-line="31" selection-start-column="18" selection-end-line="31" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="cardView.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="cardView.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/modules/main_page/cardView.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="486">
-              <caret line="135" column="1" lean-forward="true" selection-start-line="135" selection-start-column="1" selection-end-line="135" selection-end-column="1" />
+            <state relative-caret-position="288">
+              <caret line="18" column="20" lean-forward="false" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -144,17 +132,9 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>60</find>
-      <find>cntt3</find>
-      <find>abs5</find>
-      <find>grayLine</find>
-      <find>overflow</find>
-      <find>width</find>
       <find>cnttt</find>
       <find>myBid</find>
-      <find>cntt4</find>
       <find>overflo</find>
-      <find>cursor</find>
       <find>refresh</find>
       <find>grayline</find>
       <find>options</find>
@@ -167,13 +147,21 @@
       <find>cnt3</find>
       <find>navLeft</find>
       <find>mainIage</find>
-      <find>mainImage</find>
       <find>nav</find>
       <find>check</find>
       <find>checkbox</find>
-      <find>nav1</find>
       <find>pointer</find>
       <find>select</find>
+      <find>cursor</find>
+      <find>linear</find>
+      <find>mainImage</find>
+      <find>center</find>
+      <find>cardText</find>
+      <find>main</find>
+      <find>abs3</find>
+      <find>card</find>
+      <find>cntt4</find>
+      <find>nav1</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -231,14 +219,14 @@
         <option value="$PROJECT_DIR$/src/constants/constants.js" />
         <option value="$PROJECT_DIR$/src/modules/car_detail/carDetailViewContainer.js" />
         <option value="$PROJECT_DIR$/src/modules/car_detail/carDetailState.js" />
-        <option value="$PROJECT_DIR$/src/modules/car_detail/carDetailView.css" />
-        <option value="$PROJECT_DIR$/src/modules/car_detail/carDetailView.js" />
         <option value="$PROJECT_DIR$/src/components/templates/CheckBox.js" />
         <option value="$PROJECT_DIR$/src/modules/top_navigator/navigator.css" />
-        <option value="$PROJECT_DIR$/src/modules/main_page/cardView.css" />
         <option value="$PROJECT_DIR$/src/modules/top_navigator/navigator.js" />
         <option value="$PROJECT_DIR$/src/components/templates/scroll.css" />
         <option value="$PROJECT_DIR$/src/modules/main_page/mainPageView.js" />
+        <option value="$PROJECT_DIR$/src/modules/car_detail/carDetailView.js" />
+        <option value="$PROJECT_DIR$/src/modules/car_detail/carDetailView.css" />
+        <option value="$PROJECT_DIR$/src/modules/main_page/cardView.css" />
       </list>
     </option>
   </component>
@@ -450,12 +438,12 @@
       <workItem from="1533810258975" duration="9567000" />
       <workItem from="1533874487403" duration="565000" />
       <workItem from="1533883427901" duration="546000" />
-      <workItem from="1534122938589" duration="22744000" />
+      <workItem from="1534122938589" duration="28797000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="427581000" />
+    <option name="totallyTimeSpent" value="433634000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-180" y="-1029" width="1602" height="959" extended-state="0" />
@@ -720,14 +708,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/car_detail/carDetailState.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="64" column="52" lean-forward="true" selection-start-line="64" selection-start-column="52" selection-end-line="64" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/modules/car_detail/carDetailViewContainer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="448">
@@ -754,25 +734,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/main_page/mainPageSaga.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16">
-          <caret line="7" column="31" lean-forward="false" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/car_detail/carDetailView.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16">
-          <caret line="100" column="51" lean-forward="false" selection-start-line="100" selection-start-column="51" selection-end-line="100" selection-end-column="51" />
-          <folding>
-            <marker date="1534143121784" expanded="true" signature="3372:3422" ph="&lt;div/&gt;" />
-            <marker date="1534143121784" expanded="true" signature="16152:16176" ph="&lt;Col/&gt;" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/templates/ScrollToTop.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
@@ -786,7 +747,7 @@
         <state relative-caret-position="400">
           <caret line="25" column="11" lean-forward="false" selection-start-line="25" selection-start-column="10" selection-end-line="25" selection-end-column="11" />
           <folding>
-            <element signature="e#0#41#0" expanded="true" />
+            <element signature="e#0#41#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -799,14 +760,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/main_page/mainPageViewContainer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="10" column="9" lean-forward="false" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/modules/main_page/mainPageState.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="496">
@@ -815,26 +768,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/car_detail/carDetailView.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="496">
-          <caret line="31" column="1" lean-forward="true" selection-start-line="31" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/modules/top_navigator/navigator.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="592">
-          <caret line="37" column="1" lean-forward="true" selection-start-line="37" selection-start-column="1" selection-end-line="37" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/main_page/cardView.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="135" column="1" lean-forward="true" selection-start-line="135" selection-start-column="1" selection-end-line="135" selection-end-column="1" />
+          <caret line="37" column="1" lean-forward="false" selection-start-line="37" selection-start-column="1" selection-end-line="37" selection-end-column="1" />
           <folding />
         </state>
       </provider>
@@ -847,6 +784,59 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/main_page/mainPageSaga.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="7" column="31" lean-forward="false" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/car_detail/carDetailState.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="64" column="52" lean-forward="true" selection-start-line="64" selection-start-column="52" selection-end-line="64" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/main_page/mainPageViewContainer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="10" column="9" lean-forward="false" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/car_detail/carDetailView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="204" column="77" lean-forward="true" selection-start-line="204" selection-start-column="77" selection-end-line="204" selection-end-column="93" />
+          <folding>
+            <marker date="1534212385366" expanded="true" signature="3372:3422" ph="&lt;div/&gt;" />
+            <marker date="1534212385366" expanded="true" signature="16290:16314" ph="&lt;Col/&gt;" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/main_page/mainPageView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="415" column="31" lean-forward="false" selection-start-line="415" selection-start-column="31" selection-end-line="420" selection-end-column="38" />
+          <folding>
+            <element signature="e#9#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/car_detail/carDetailView.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="472">
+          <caret line="58" column="1" lean-forward="false" selection-start-line="58" selection-start-column="1" selection-end-line="58" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/modules/top_navigator/navigator.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="512">
@@ -855,13 +845,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/main_page/mainPageView.js">
+    <entry file="file://$PROJECT_DIR$/src/modules/main_page/cardView.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="317" column="55" lean-forward="true" selection-start-line="317" selection-start-column="55" selection-end-line="317" selection-end-column="55" />
-          <folding>
-            <element signature="e#9#50#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="288">
+          <caret line="18" column="20" lean-forward="false" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
+          <folding />
         </state>
       </provider>
     </entry>

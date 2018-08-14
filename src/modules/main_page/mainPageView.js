@@ -184,9 +184,8 @@ class MainPageView extends Component<Props, State> {
     }).catch((e)=>console.log(e))
   }
   handleGroupChange(event){
-    const target = event.target;
-    const value = target.value;
-    const index = target.name;
+    const value = event.value;
+    const index = event.name;
     if(this.props.isGroupChecked && this.props.groupValue.toString()===value.toString()){
       this.props.setGroupRequest(null,-1,false).then(()=>this.props.setModelRequest(null,-1,false)).then(()=>this.getCarsRequest()).catch((e)=>console.log(e))
     }
@@ -197,9 +196,8 @@ class MainPageView extends Component<Props, State> {
     }
   }
   handleModelChange(event){
-    const target = event.target;
-    const value = target.value;
-    const index = target.name;
+    const value = event.value;
+    const index = event.name;
     if(this.props.isModelChecked && this.props.modelValue.toString()===value.toString()){
       this.props.setModelRequest(null,-1,false).then(()=>this.getCarsRequest()).catch((e)=>console.log(e))
     }
@@ -212,9 +210,8 @@ class MainPageView extends Component<Props, State> {
     window.scrollTo(0, 0)
   }
   handleBrandChange(event){
-    const target = event.target;
-    const value = target.value;
-    const index = target.name;
+    const value = event.value;
+    const index = event.name;
     if(this.props.isBrandChecked && this.props.brandValue.toString()===value.toString()){
       this.props.setBrandRequest(null,-1,false).then(()=>this.props.setGroupRequest(null,-1,false)).then(()=>this.props.setModelRequest(null,-1,false)).then(()=>this.getCarsRequest()).catch((e)=>console.log(e))
     }
@@ -292,15 +289,16 @@ class MainPageView extends Component<Props, State> {
                     <div key={brandIndex}>
                       <div className='brand'>
                         <div className="input" style={{borderRadius: '8px'}}>
-                          <input
-                            name={brandIndex}
-                            value={brand.id}
-                            type="checkbox"
-                            style={{ cursor:'pointer' }}
-                            className="checkbox"
-                            checked={this.props.brandIndex.toString()===brandIndex.toString()}
-                            onChange={this.handleBrandChange}
-                          />
+                          <div className="roundedTwo">
+                            <input id={brandIndex+"roundedTwo"} name={brandIndex}
+                                   value={brand.id}
+                                   type="checkbox"
+                                   style={{ cursor:'pointer' }}
+                                   className="checkbox"
+                                   checked={this.props.brandIndex.toString()===brandIndex.toString()}
+                                   onChange={()=>this.handleBrandChange({name:brandIndex, value:brand.id})} />
+                            <label htmlFor={brandIndex+"roundedTwo"}></label>
+                          </div>
                         </div>
                         <div className='center'>
                           <span className='text1'>{' '} {brand.name}</span>
@@ -316,13 +314,15 @@ class MainPageView extends Component<Props, State> {
                             <div key={groupIndex}>
                               <div className='group'>
                                 <div className="input">
-                                  <input
-                                    name={groupIndex}
-                                    value={group.id}
-                                    type="checkbox"
-                                    style={{cursor: 'pointer' }}
-                                    checked={this.props.groupIndex.toString()===groupIndex.toString()}
-                                    onChange={this.handleGroupChange} />
+                                  <div className="roundedTwo">
+                                    <input id={brandIndex+"roundedTwo1"}   name={groupIndex}
+                                           value={group.id}
+                                           type="checkbox"
+                                           style={{cursor: 'pointer' }}
+                                           checked={this.props.groupIndex.toString()===groupIndex.toString()}
+                                           onChange={()=>this.handleGroupChange({name:groupIndex, value:group.id})} />
+                                    <label htmlFor={brandIndex+"roundedTwo1"}></label>
+                                  </div>
                                 </div>
                                 <div className='center'>
                                   <span className='text1'>{' '} {group.name}</span>
@@ -338,13 +338,17 @@ class MainPageView extends Component<Props, State> {
                                     <div key={modelIndex}>
                                       <div  className='model'>
                                         <div className="input">
-                                          <input
-                                            name={modelIndex}
-                                            value={model.id}
-                                            type="checkbox"
-                                            style={{cursor: 'pointer' }}
-                                            checked={this.props.modelIndex.toString()===modelIndex.toString()}
-                                            onChange={this.handleModelChange} />
+                                          <div className="roundedTwo">
+                                            <input
+                                                    id={brandIndex+"roundedTwo2"}
+                                                    name={modelIndex}
+                                                    value={model.id}
+                                                    type="checkbox"
+                                                    style={{cursor: 'pointer' }}
+                                                    checked={this.props.modelIndex.toString()===modelIndex.toString()}
+                                                    onChange={()=>this.handleModelChange({name:modelIndex, value:model.id})} />
+                                            <label htmlFor={brandIndex+"roundedTwo2"}></label>
+                                          </div>
                                         </div>
                                         <div className='center'>
                                           <span className='text1'>{' '} {model.name}</span>
@@ -405,12 +409,19 @@ class MainPageView extends Component<Props, State> {
                             <div className="cardTitle1">
                             {listValue.detail.name}
                           </div>
-                            <div className="cnt5">
-                              <div className="cnt2">
-                                <Moment format="YYYY/MM" style={{fontSize:12}}>
+                            <div className="cnt2">
+                              <div className="cnttt4_1" style={{color: '#9093A8',
+                                paddingBottom:'2px',
+                                paddingTop: '2px'}}>
+                                <Moment format="YYYY/MM" style={{fontSize:'12px'}}>
                                   {listValue.detail.initial_registration_date}
                                 </Moment>
-                                <div className="cardText">({listValue.detail.year}년형)</div>
+                                <div style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
+                                  <div style={{marginLeft:'5px',fontSize:'12px',  textAlign: 'center'}}>({listValue.detail.year}년형)</div>
+                                </div>
+                              </div>
+                              <div className="cnt5">
+                              <div className="cnt2">
                                 <div className="cardText">{listValue.detail.mileage / 10000}만 km</div>
                                 <div className="cardText">{listValue.detail.location}</div>
                               </div>
@@ -420,6 +431,7 @@ class MainPageView extends Component<Props, State> {
                                 <div className='abs6'>
                                   {listValue.auction.bids_count}
                                 </div>
+                              </div>
                               </div>
                             </div>
                         </div>
