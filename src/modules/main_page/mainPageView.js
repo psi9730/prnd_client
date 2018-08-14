@@ -244,34 +244,34 @@ class MainPageView extends Component<Props, State> {
               <Button className="btt1" style={{backgroundColor: 'white', borderWidth:0,paddingBottom:0}} onClick={() => this.goToBargain()}>
                 {
                   this.state.selectedOption2 === '일반' ?
-                    <div className="bttStyle1">
-                      <span style={{ color: '#2E7DE1', marginBottom: '15px' }}>일반</span>
-                      <span className='bottomLine'/>
+                    <div className="bttStyle1" style={{position: 'relative'}}>
+                      <span style={{ color: '#2E7DE1', paddingBottom: '15px' }}>일반</span>
+                      <span className='bottomLine' style={{position: 'absolute',width: '100%',bottom:0}}/>
                     </div>:
                     <div className="bttStyle1">
-                      <span style={{ color: 'gray' , marginBottom: '15px'}}>일반</span>
+                      <span style={{ color: 'gray' ,paddingBottom: '15px'}}>일반</span>
                     </div>
                 }
               </Button>
               <Button className="btt1"  style={{backgroundColor: 'white', borderWidth:0}} onClick={() => this.goToBargain()}>{
                 this.state.selectedOption2 === '공매' ?
-                  <div className="bttStyle1">
-                    <span style={{ color: '#2E7DE1', marginBottom: '15px'}}>공매</span>
-                    <span className='bottomLine'/>
+                  <div className="bttStyle1" style={{position: 'relative'}}>
+                    <span style={{ color: '#2E7DE1', paddingBottom: '15px'}}>공매</span>
+                    <span className='bottomLine' style={{position: 'absolute',width: '100%',bottom:0}}/>
                   </div>:
                   <div className="bttStyle1">
-                    <span style={{ color: 'gray' , marginBottom: '15px'}}>공매</span>
+                    <span style={{ color: 'gray' , paddingBottom: '15px'}}>공매</span>
                   </div>
               }
               </Button>
               <Button className="btt1"  style={{backgroundColor: 'white', borderWidth:0}} onClick={() => this.goToBargain()}>{
                 this.state.selectedOption2 === '찜' ?
-                  <div className="bttStyle1">
-                    <span style={{ color: '#2E7DE1', marginBottom: '15px'}}>찜</span>
-              <span className='bottomLine'/>
+                  <div className="bttStyle1" style={{position: 'relative'}}>
+                    <span style={{ color: '#2E7DE1',paddingBottom: '15px'}}>찜</span>
+                    <span className='bottomLine' style={{position: 'absolute',width: '100%',bottom:0}}/>
                   </div>:
                   <div className="bttStyle1">
-                    <span style={{ color: 'gray', marginBottom: '15px'}}>찜</span>
+                    <span style={{ color: 'gray',paddingBottom: '15px'}}>찜</span>
                   </div>
               }
               </Button>
