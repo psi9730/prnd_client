@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cddba2f0-06a3-4906-beb1-456af59b0e68" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/components/templates/styles.css" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/components/templates/CheckBox.js" afterPath="$PROJECT_DIR$/src/components/templates/CheckBox.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/templates/ScrollToTop.js" afterPath="$PROJECT_DIR$/src/components/templates/ScrollToTop.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/templates/scroll.css" afterPath="$PROJECT_DIR$/src/components/templates/SelectBox.js" />
-      <change beforePath="$PROJECT_DIR$/src/modules/car_detail/carDetailSaga.js" afterPath="$PROJECT_DIR$/src/modules/car_detail/carDetailSaga.js" />
       <change beforePath="$PROJECT_DIR$/src/modules/car_detail/carDetailView.js" afterPath="$PROJECT_DIR$/src/modules/car_detail/carDetailView.js" />
-      <change beforePath="$PROJECT_DIR$/src/modules/main_page/mainPageView.js" afterPath="$PROJECT_DIR$/src/modules/main_page/mainPageView.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -26,11 +19,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="carDetailView.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="carDetailView.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/modules/car_detail/carDetailView.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="15" column="2" lean-forward="false" selection-start-line="15" selection-start-column="2" selection-end-line="15" selection-end-column="2" />
+            <state relative-caret-position="290">
+              <caret line="46" column="26" lean-forward="true" selection-start-line="46" selection-start-column="26" selection-end-line="46" selection-end-column="26" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -48,10 +41,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mainPageView.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="mainPageView.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/modules/main_page/mainPageView.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="348">
+            <state relative-caret-position="1476">
               <caret line="325" column="57" lean-forward="false" selection-start-line="325" selection-start-column="57" selection-end-line="325" selection-end-column="57" />
               <folding>
                 <element signature="e#9#50#0" expanded="true" />
@@ -136,7 +129,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>매입</find>
       <find>checkBox</find>
       <find>relat</find>
       <find>input</find>
@@ -162,10 +154,11 @@
       <find>id</find>
       <find>selectedOption</find>
       <find>z-index: 2;</find>
-      <find>handleChange</find>
       <find>card</find>
       <find>height</find>
       <find>console</find>
+      <find>handleChange</find>
+      <find>setState</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -228,9 +221,9 @@
         <option value="$PROJECT_DIR$/src/components/templates/ScrollToTop.js" />
         <option value="$PROJECT_DIR$/src/components/templates/styles.css" />
         <option value="$PROJECT_DIR$/src/components/templates/SelectBox.js" />
-        <option value="$PROJECT_DIR$/src/modules/car_detail/carDetailView.js" />
         <option value="$PROJECT_DIR$/src/modules/car_detail/carDetailSaga.js" />
         <option value="$PROJECT_DIR$/src/modules/main_page/mainPageView.js" />
+        <option value="$PROJECT_DIR$/src/modules/car_detail/carDetailView.js" />
       </list>
     </option>
   </component>
@@ -311,6 +304,13 @@
               <item name="pet-stagram" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="modules" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pet-stagram" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pet-stagram" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="modules" type="462c0819:PsiDirectoryNode" />
+              <item name="car_detail" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="pet-stagram" type="b2602c69:ProjectViewProjectNode" />
@@ -403,12 +403,12 @@
       <workItem from="1533810258975" duration="9567000" />
       <workItem from="1533874487403" duration="565000" />
       <workItem from="1533883427901" duration="546000" />
-      <workItem from="1534122938589" duration="33452000" />
+      <workItem from="1534122938589" duration="34195000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="438289000" />
+    <option name="totallyTimeSpent" value="439032000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-180" y="-1029" width="1602" height="959" extended-state="0" />
@@ -791,16 +791,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/car_detail/carDetailView.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="15" column="2" lean-forward="false" selection-start-line="15" selection-start-column="2" selection-end-line="15" selection-end-column="2" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/modules/car_detail/carDetailSaga.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="400">
@@ -811,10 +801,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/modules/main_page/mainPageView.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
+        <state relative-caret-position="1476">
           <caret line="325" column="57" lean-forward="false" selection-start-line="325" selection-start-column="57" selection-end-line="325" selection-end-column="57" />
           <folding>
             <element signature="e#9#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/car_detail/carDetailView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="46" column="26" lean-forward="true" selection-start-line="46" selection-start-column="26" selection-end-line="46" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>
