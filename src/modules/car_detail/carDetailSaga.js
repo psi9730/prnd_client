@@ -18,7 +18,6 @@ function* requestGetCar({carId}: { cardId: string }) {
       }
     );
     if (token) {
-      console.log(token)
       yield put(CarDetailActions.getCarSuccess(token))
     }
   } catch (e) {

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './scroll.css';
+import './styles.css';
 
 class CheckBox extends React.Component {
   constructor() {

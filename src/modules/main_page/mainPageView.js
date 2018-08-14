@@ -8,6 +8,7 @@ import Moment from 'react-moment';
 import Select from 'react-select';
 import './cardView.css';
 import Navigator from '../top_navigator/navigatorContainer';
+import SelectBox from '../../components/templates/selectBox';
 
 type Props = {
   brands: any,
@@ -121,13 +122,14 @@ class MainPageView extends Component<Props, State> {
     window.removeEventListener('scroll', this.onScroll, false);
   }
   handleChange = (selectedOption) => {
+    console.log(selectedOption, 'selectedOption');
     this.setState({ selectedOption });
     if(selectedOption.value==='최근등록순'){
       this.props.setOrderRequest('recent').then(()=>this.getCarsRequest()).catch((e)=>console.log(e));
     }else if(selectedOption.value==='종료임박순'){
-      this.props.setOrderRequest('bids_count').then(()=>this.getCarsRequest()).catch((e)=>console.log(e));
-    }else if(selectedOption.value==='응찰적은순'){
       this.props.setOrderRequest('end_time').then(()=>this.getCarsRequest()).catch((e)=>console.log(e));
+    }else if(selectedOption.value==='응찰적은순'){
+      this.props.setOrderRequest('bids_count').then(()=>this.getCarsRequest()).catch((e)=>console.log(e));
     }
   }
   onScroll = () => {
@@ -315,13 +317,13 @@ class MainPageView extends Component<Props, State> {
                               <div className='group'>
                                 <div className="input">
                                   <div className="roundedTwo">
-                                    <input id={brandIndex+"roundedTwo1"}   name={groupIndex}
+                                    <input id={groupIndex+"roundedTwo1"}   name={groupIndex}
                                            value={group.id}
                                            type="checkbox"
                                            style={{cursor: 'pointer' }}
                                            checked={this.props.groupIndex.toString()===groupIndex.toString()}
                                            onChange={()=>this.handleGroupChange({name:groupIndex, value:group.id})} />
-                                    <label htmlFor={brandIndex+"roundedTwo1"}></label>
+                                    <label htmlFor={groupIndex+"roundedTwo1"}></label>
                                   </div>
                                 </div>
                                 <div className='center'>
@@ -340,14 +342,14 @@ class MainPageView extends Component<Props, State> {
                                         <div className="input">
                                           <div className="roundedTwo">
                                             <input
-                                                    id={brandIndex+"roundedTwo2"}
+                                                    id={modelIndex+"roundedTwo2"}
                                                     name={modelIndex}
                                                     value={model.id}
                                                     type="checkbox"
                                                     style={{cursor: 'pointer' }}
                                                     checked={this.props.modelIndex.toString()===modelIndex.toString()}
                                                     onChange={()=>this.handleModelChange({name:modelIndex, value:model.id})} />
-                                            <label htmlFor={brandIndex+"roundedTwo2"}></label>
+                                            <label htmlFor={modelIndex+"roundedTwo2"}></label>
                                           </div>
                                         </div>
                                         <div className='center'>
@@ -379,14 +381,24 @@ class MainPageView extends Component<Props, State> {
                     </div>
                   </div>
                   <div className="cnt7">
-                    <div style={{flexBasis: 200, flexGrow:0, cursor:'pointer', flexShrink:0}}>
-                      <Select
+                    <div style={{flexBasis: 200, flexGrow:0, cursor:'pointer', flexShrink:0,alignSelf: 'stretch'}}>
+                      <SelectBox
+                        name="venue[country_id]"
+                        value={this.props.selectedOption}
+                        selectedOption = {{value:this.parseOrder(this.props.order), name: this.parseOrder(this.props.order)}}
+                        onChange={this.handleChange}
+                        items={[
+                          { value: '최근등록순', id: '최근등록순' },
+                          { value:  '종료임박순', id: '종료임박순' },
+                          { value: '응찰적은순', id:'응찰적은순'}
+                        ]}
+                      />
+                      {/*  <Select
                         value={this.props.selectedOption}
                         onChange={this.handleChange}
                         placeholder={this.parseOrder(this.props.order)}
                         options={options}
-                        style={customStyles}
-                      />
+                        style={customStyles}/>*/}
                     </div>
                   </div>
                 </div>

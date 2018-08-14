@@ -40,8 +40,7 @@ class CarDetailView extends Component<Props, State> {
         curTime : new Date()
       },()=>{
         const diff = this.getStringDateDiffInDays(this.state.curTime, new Date(this.props.endAt));
-        console.log(diff,'diff');
-        this.setState({dateRemain: diff});console.log(this.state.curTime)})
+        this.setState({dateRemain: diff})})
     },1000)
   }
   componentWillMount() {
